@@ -1,0 +1,27 @@
+---
+- name: Configurar Servidor Classic
+  hosts: all
+  become: yes
+  tasks: 
+
+    - name: Instalar net-tools (para comando arp)
+      apt:
+        name: net-tools
+        state: present
+        update_cache: yes
+
+    - block:
+        - name: Del default route
+          command: ip route del default
+        
+        - name: Subir interface enp0s8
+          command: ip link set enp0s8 up
+        
+        - name: Adjuste arp table
+          command: arp -i enp0s8 -s 192.168.57.10 08:00:27:BB:BB:BB
+
+        - name: Adjuste arp table
+          command: arp -i enp0s8 -s 192.168.58.10 08:00:27:CC:CC:CC
+
+
+      ignore_errors: yes

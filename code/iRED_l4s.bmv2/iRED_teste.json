@@ -1,0 +1,4568 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp", 32, false],
+        ["tmp_0", 32, false],
+        ["tmp_1", 32, false],
+        ["tmp_2", 32, false],
+        ["tmp_3", 32, false],
+        ["flag_0", 1, false],
+        ["tmp_4", 32, false],
+        ["tmp_5", 32, false],
+        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
+        ["tmp_8", 32, false],
+        ["tmp_9", 16, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 16, false],
+        ["tmp_12", 32, false],
+        ["tmp_13", 32, false],
+        ["tmp_14", 16, false],
+        ["tmp_15", 32, false],
+        ["tmp_16", 16, false],
+        ["tmp_17", 32, false],
+        ["previousQDelay_0", 32, false],
+        ["target_violation_0", 8, false],
+        ["rand_classic_0", 16, false],
+        ["dropProb_0", 16, false],
+        ["mark_decision_l4s_0", 1, false],
+        ["drop_decision_classic_0", 1, false],
+        ["metadata._ingress_metadata_count0", 16, false],
+        ["metadata._parser_metadata_remaining1", 16, false],
+        ["metadata._queue_metadata_output_port2", 32, false],
+        ["_padding_0", 5, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["qid", 5, false],
+        ["_padding", 6, false]
+      ]
+    },
+    {
+      "name" : "ethernet_h",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_h",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 5, false],
+        ["l4s", 1, false],
+        ["ecn", 2, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "nodeCount_h",
+      "id" : 4,
+      "fields" : [
+        ["count", 16, false]
+      ]
+    },
+    {
+      "name" : "InBandNetworkTelemetry_h",
+      "id" : 5,
+      "fields" : [
+        ["swid", 31, false],
+        ["ingress_port", 9, false],
+        ["egress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "nodeCount",
+      "id" : 4,
+      "header_type" : "nodeCount_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[0]",
+      "id" : 5,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[1]",
+      "id" : 6,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[2]",
+      "id" : 7,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[3]",
+      "id" : 8,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[4]",
+      "id" : 9,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[5]",
+      "id" : 10,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[6]",
+      "id" : 11,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[7]",
+      "id" : 12,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[8]",
+      "id" : 13,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "INT[9]",
+      "id" : 14,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [
+    {
+      "name" : "INT",
+      "id" : 0,
+      "header_type" : "InBandNetworkTelemetry_h",
+      "size" : 10,
+      "header_ids" : [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    }
+  ],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [
+    {
+      "id" : 1,
+      "name" : "field_list0",
+      "elements" : [
+        {
+          "type" : "field",
+          "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+        }
+      ]
+    }
+  ],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0xfd",
+              "mask" : null,
+              "next_state" : "parse_count"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_count",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "nodeCount"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "metadata._parser_metadata_remaining1"]
+                },
+                {
+                  "type" : "field",
+                  "value" : ["nodeCount", "count"]
+                }
+              ],
+              "op" : "set"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0000",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_int"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["nodeCount", "count"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_int",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "stack",
+                  "value" : "INT"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "field",
+                  "value" : ["scalars", "metadata._parser_metadata_remaining1"]
+                },
+                {
+                  "type" : "expression",
+                  "value" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "metadata._parser_metadata_remaining1"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  }
+                }
+              ],
+              "op" : "set"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0000",
+              "mask" : null,
+              "next_state" : null
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : "parse_int"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._parser_metadata_remaining1"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 497,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "nodeCount", "INT[0]", "INT[1]", "INT[2]", "INT[3]", "INT[4]", "INT[5]", "INT[6]", "INT[7]", "INT[8]", "INT[9]"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [
+    {
+      "name" : "MyIngress.forwardingPkt",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 171,
+        "column" : 36,
+        "source_fragment" : "forwardingPkt"
+      },
+      "size" : 4,
+      "is_direct" : false
+    },
+    {
+      "name" : "MyIngress.dropPkt",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 172,
+        "column" : 36,
+        "source_fragment" : "dropPkt"
+      },
+      "size" : 4,
+      "is_direct" : false
+    },
+    {
+      "name" : "MyIngress.dropRecirc",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 173,
+        "column" : 36,
+        "source_fragment" : "dropRecirc"
+      },
+      "size" : 4,
+      "is_direct" : false
+    },
+    {
+      "name" : "MyEgress.recirc",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 263,
+        "column" : 36,
+        "source_fragment" : "recirc"
+      },
+      "size" : 4,
+      "is_direct" : false
+    },
+    {
+      "name" : "MyEgress.cloneCount",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 264,
+        "column" : 36,
+        "source_fragment" : "cloneCount"
+      },
+      "size" : 4,
+      "is_direct" : false
+    }
+  ],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.flagtoDrop_reg",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 170,
+        "column" : 26,
+        "source_fragment" : "flagtoDrop_reg"
+      },
+      "size" : 10,
+      "bitwidth" : 1
+    },
+    {
+      "name" : "MyEgress.QueueID",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 259,
+        "column" : 25,
+        "source_fragment" : "QueueID"
+      },
+      "size" : 8,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyEgress.dropProbability",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 260,
+        "column" : 26,
+        "source_fragment" : "dropProbability"
+      },
+      "size" : 10,
+      "bitwidth" : 16
+    },
+    {
+      "name" : "MyEgress.targetDelay_reg",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 261,
+        "column" : 26,
+        "source_fragment" : "targetDelay_reg"
+      },
+      "size" : 1,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyEgress.QDelay_reg",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 262,
+        "column" : 26,
+        "source_fragment" : "QDelay_reg"
+      },
+      "size" : 10,
+      "bitwidth" : 32
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 473,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "diffserv"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "l4s"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ecn"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "srcAddr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dstAddr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.drop_recirc",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyIngress.dropRecirc"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 176,
+            "column" : 8,
+            "source_fragment" : "dropRecirc.count(meta.queue_metadata.output_port)"
+          }
+        },
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 177,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop_regular",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 181,
+            "column" : 22,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyIngress.dropPkt"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 181,
+            "column" : 8,
+            "source_fragment" : "dropPkt.count((bit<32>)standard_metadata.egress_spec)"
+          }
+        },
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 182,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop_regular",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 181,
+            "column" : 22,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyIngress.dropPkt"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 181,
+            "column" : 8,
+            "source_fragment" : "dropPkt.count((bit<32>)standard_metadata.egress_spec)"
+          }
+        },
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 182,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.ipv4_forward",
+      "id" : 4,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 186,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 187,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 188,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 189,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "local",
+                    "value" : 1
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 190,
+            "column" : 28,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyIngress.forwardingPkt"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 190,
+            "column" : 8,
+            "source_fragment" : "forwardingPkt.count((bit<32>)standard_metadata.egress_spec)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste213",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.flagtoDrop_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 213,
+            "column" : 12,
+            "source_fragment" : "flagtoDrop_reg.write(meta.queue_metadata.output_port,1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste233",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "priority"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x07"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 233,
+            "column" : 20,
+            "source_fragment" : "standard_metadata.priority = (bit<3>)7"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 236,
+            "column" : 41,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.flagtoDrop_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 236,
+            "column" : 20,
+            "source_fragment" : "flagtoDrop_reg.write((bit<32>)standard_metadata.egress_spec,0)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste244",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "priority"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 244,
+            "column" : 20,
+            "source_fragment" : "standard_metadata.priority = (bit<3>)0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste225",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_spec"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 225,
+            "column" : 37,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "flag_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.flagtoDrop_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 225,
+            "column" : 12,
+            "source_fragment" : "flagtoDrop_reg.read(flag,(bit<32>)standard_metadata.egress_spec)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "NoAction",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyEgress.recirculate_packet",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "recirculate",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 269,
+            "column" : 8,
+            "source_fragment" : "recirculate_preserving_field_list(0)"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyEgress.recirc"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 270,
+            "column" : 8,
+            "source_fragment" : "recirc.count(meta.queue_metadata.output_port)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyEgress.clonePacket",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_egress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 274,
+            "column" : 8,
+            "source_fragment" : "clone_preserving_field_list(CloneType.E2E, meta.queue_metadata.output_port,0)"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyEgress.cloneCount"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 275,
+            "column" : 8,
+            "source_fragment" : "cloneCount.count(meta.queue_metadata.output_port)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyEgress.clonePacket",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_egress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 274,
+            "column" : 8,
+            "source_fragment" : "clone_preserving_field_list(CloneType.E2E, meta.queue_metadata.output_port,0)"
+          }
+        },
+        {
+          "op" : "count",
+          "parameters" : [
+            {
+              "type" : "counter_array",
+              "value" : "MyEgress.cloneCount"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 275,
+            "column" : 8,
+            "source_fragment" : "cloneCount.count(meta.queue_metadata.output_port)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyEgress.add_swtrace",
+      "id" : 13,
+      "runtime_data" : [
+        {
+          "name" : "swid",
+          "bitwidth" : 31
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["nodeCount", "count"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["nodeCount", "count"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 279,
+            "column" : 8,
+            "source_fragment" : "hdr.nodeCount.count = hdr.nodeCount.count + 1"
+          }
+        },
+        {
+          "op" : "push",
+          "parameters" : [
+            {
+              "type" : "header_stack",
+              "value" : "INT"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 280,
+            "column" : 8,
+            "source_fragment" : "hdr.INT.push_front(1)"
+          }
+        },
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "INT[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 281,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].setValid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "swid"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 282,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].swid = swid"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "ingress_port"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 283,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].ingress_port = (ingress_port_v)standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "ingress_global_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 284,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].ingress_global_timestamp = (ingress_global_timestamp_v)standard_metadata.ingress_global_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "egress_port"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_port"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 285,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].egress_port = (egress_port_v)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "egress_spec"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 286,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].egress_spec = (egressSpec_v)standard_metadata.egress_spec"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "egress_global_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 287,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].egress_global_timestamp = (egress_global_timestamp_v)standard_metadata.egress_global_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "enq_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "enq_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 288,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].enq_timestamp = (enq_timestamp_v)standard_metadata.enq_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "enq_qdepth"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "enq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 289,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].enq_qdepth = (enq_qdepth_v)standard_metadata.enq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "deq_timedelta"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_timedelta"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 290,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].deq_timedelta = (deq_timedelta_v)standard_metadata.deq_timedelta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["INT[0]", "deq_qdepth"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_qdepth"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 291,
+            "column" : 8,
+            "source_fragment" : "hdr.INT[0].deq_qdepth = (deq_qdepth_v)standard_metadata.deq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "totalLen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0020"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 293,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.totalLen = hdr.ipv4.totalLen + 32"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste306",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "qid"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 306,
+            "column" : 15,
+            "source_fragment" : "(bit<32>)standard_metadata.qid"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.QueueID"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 306,
+            "column" : 1,
+            "source_fragment" : "QueueID.write((bit<32>)standard_metadata.qid, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste318",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 318,
+            "column" : 12,
+            "source_fragment" : "meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste357",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "target_violation_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 357,
+            "column" : 16,
+            "source_fragment" : "target_violation = 0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste336",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 336,
+            "column" : 44,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "previousQDelay_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.QDelay_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 336,
+            "column" : 12,
+            "source_fragment" : "QDelay_reg.read(previousQDelay, (bit<32>)standard_metadata.egress_port)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 345,
+            "column" : 29,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["standard_metadata", "deq_timedelta"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "previousQDelay_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 345,
+            "column" : 69,
+            "source_fragment" : "EWMA"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.QDelay_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 345,
+            "column" : 12,
+            "source_fragment" : "QDelay_reg.write((bit<32>)standard_metadata.egress_port, EWMA)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste364",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "target_violation_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 364,
+            "column" : 16,
+            "source_fragment" : "target_violation = 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste371",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "target_violation_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x02"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 371,
+            "column" : 16,
+            "source_fragment" : "target_violation = 2"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste395",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 395,
+            "column" : 46,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "dropProb_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 395,
+            "column" : 85,
+            "source_fragment" : "dropProb_temp"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 395,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "mark_decision_l4s_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 397,
+            "column" : 24,
+            "source_fragment" : "mark_decision_l4s = true"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste403",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 403,
+            "column" : 46,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "dropProb_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 403,
+            "column" : 85,
+            "source_fragment" : "dropProb_temp"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 403,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "mark_decision_l4s_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 405,
+            "column" : 24,
+            "source_fragment" : "mark_decision_l4s = false"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste387",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 387,
+            "column" : 51,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dropProb_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 387,
+            "column" : 20,
+            "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste412",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ecn"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x03"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 412,
+            "column" : 24,
+            "source_fragment" : "hdr.ipv4.ecn = 3"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste426",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 426,
+            "column" : 46,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "dropProb_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 426,
+            "column" : 85,
+            "source_fragment" : "dropProb_temp"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 426,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "drop_decision_classic_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 428,
+            "column" : 24,
+            "source_fragment" : "drop_decision_classic = true"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste434",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_15"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 434,
+            "column" : 46,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "dropProb_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 434,
+            "column" : 85,
+            "source_fragment" : "dropProb_temp"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_15"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 434,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "drop_decision_classic_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 436,
+            "column" : 24,
+            "source_fragment" : "drop_decision_classic = false"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste419",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 419,
+            "column" : 51,
+            "source_fragment" : "(bit<32>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dropProb_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyEgress.dropProbability"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 419,
+            "column" : 20,
+            "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste443",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 443,
+            "column" : 24,
+            "source_fragment" : "meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste379",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "modify_field_rng_uniform",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "rand_classic_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 379,
+            "column" : 16,
+            "source_fragment" : "random(rand_classic, 0, 65535)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste454",
+      "id" : 29,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ecn"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x03"
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 454,
+            "column" : 20,
+            "source_fragment" : "hdr.ipv4.ecn = 3"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "iRED_teste458",
+      "id" : 30,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata._queue_metadata_output_port2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 458,
+            "column" : 20,
+            "source_fragment" : "meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 164,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "node_2",
+      "tables" : [
+        {
+          "name" : "tbl_iRED_teste213",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 213,
+            "column" : 12,
+            "source_fragment" : "flagtoDrop_reg.write(meta.queue_metadata.output_port,1)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5],
+          "actions" : ["iRED_teste213"],
+          "base_default_next" : "tbl_drop_recirc",
+          "next_tables" : {
+            "iRED_teste213" : "tbl_drop_recirc"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop_recirc",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 216,
+            "column" : 12,
+            "source_fragment" : "drop_recirc()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1],
+          "actions" : ["MyIngress.drop_recirc"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop_recirc" : null
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.ipv4_lpm",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 193,
+            "column" : 10,
+            "source_fragment" : "ipv4_lpm"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4, 2, 0],
+          "actions" : ["MyIngress.ipv4_forward", "MyIngress.drop_regular", "NoAction"],
+          "base_default_next" : "tbl_iRED_teste225",
+          "next_tables" : {
+            "MyIngress.ipv4_forward" : "tbl_iRED_teste225",
+            "MyIngress.drop_regular" : "tbl_iRED_teste225",
+            "NoAction" : "tbl_iRED_teste225"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste225",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 225,
+            "column" : 12,
+            "source_fragment" : "flagtoDrop_reg.read(flag,(bit<32>)standard_metadata.egress_spec)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["iRED_teste225"],
+          "base_default_next" : "node_7",
+          "next_tables" : {
+            "iRED_teste225" : "node_7"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste233",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 233,
+            "column" : 47,
+            "source_fragment" : "= (bit<3>)7; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["iRED_teste233"],
+          "base_default_next" : "tbl_drop_regular",
+          "next_tables" : {
+            "iRED_teste233" : "tbl_drop_regular"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop_regular",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 239,
+            "column" : 20,
+            "source_fragment" : "drop_regular()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [3],
+          "actions" : ["MyIngress.drop_regular"],
+          "base_default_next" : "node_11",
+          "next_tables" : {
+            "MyIngress.drop_regular" : "node_11"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste244",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 244,
+            "column" : 47,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["iRED_teste244"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "iRED_teste244" : null
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_2",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 209,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.instance_type == BMV2_V1MODEL_INSTANCE_TYPE_RECIRC"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "instance_type"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000004"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste213",
+          "false_next" : "MyIngress.ipv4_lpm"
+        },
+        {
+          "name" : "node_7",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 228,
+            "column" : 16,
+            "source_fragment" : "flag == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "flag_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "node_8"
+        },
+        {
+          "name" : "node_8",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 231,
+            "column" : 20,
+            "source_fragment" : "(hdr.ipv4.l4s != 1) && (hdr.nodeCount.isValid() == false)"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "!=",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "l4s"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "not",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["nodeCount", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste233",
+          "false_next" : "node_11"
+        },
+        {
+          "name" : "node_11",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 242,
+            "column" : 20,
+            "source_fragment" : "(hdr.ipv4.l4s == 1) && (hdr.nodeCount.isValid() == false)"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "==",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "l4s"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "not",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["nodeCount", "$valid$"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_iRED_teste244"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 255,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : "tbl_iRED_teste306",
+      "tables" : [
+        {
+          "name" : "tbl_iRED_teste306",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 306,
+            "column" : 1,
+            "source_fragment" : "QueueID.write((bit<32>)standard_metadata.qid, 1)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["iRED_teste306"],
+          "base_default_next" : "node_16",
+          "next_tables" : {
+            "iRED_teste306" : "node_16"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyEgress.swtrace",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 296,
+            "column" : 10,
+            "source_fragment" : "swtrace"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13, 9],
+          "actions" : ["MyEgress.add_swtrace", "NoAction"],
+          "base_default_next" : "node_18",
+          "next_tables" : {
+            "MyEgress.add_swtrace" : "node_18",
+            "NoAction" : "node_18"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste318",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 318,
+            "column" : 44,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["iRED_teste318"],
+          "base_default_next" : "tbl_recirculate_packet",
+          "next_tables" : {
+            "iRED_teste318" : "tbl_recirculate_packet"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_recirculate_packet",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 319,
+            "column" : 12,
+            "source_fragment" : "recirculate_packet()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["MyEgress.recirculate_packet"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.recirculate_packet" : null
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste336",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 336,
+            "column" : 12,
+            "source_fragment" : "QDelay_reg.read(previousQDelay, (bit<32>)standard_metadata.egress_port); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["iRED_teste336"],
+          "base_default_next" : "node_22",
+          "next_tables" : {
+            "iRED_teste336" : "node_22"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste357",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 357,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["iRED_teste357"],
+          "base_default_next" : "node_24",
+          "next_tables" : {
+            "iRED_teste357" : "node_24"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste364",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 364,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["iRED_teste364"],
+          "base_default_next" : "node_26",
+          "next_tables" : {
+            "iRED_teste364" : "node_26"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste371",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 371,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19],
+          "actions" : ["iRED_teste371"],
+          "base_default_next" : "node_28",
+          "next_tables" : {
+            "iRED_teste371" : "node_28"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste379",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 379,
+            "column" : 16,
+            "source_fragment" : "random(rand_classic, 0, 65535)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28],
+          "actions" : ["iRED_teste379"],
+          "base_default_next" : "node_30",
+          "next_tables" : {
+            "iRED_teste379" : "node_30"
+          },
+          "default_entry" : {
+            "action_id" : 28,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste387",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 387,
+            "column" : 20,
+            "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["iRED_teste387"],
+          "base_default_next" : "node_32",
+          "next_tables" : {
+            "iRED_teste387" : "node_32"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste395",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 395,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["iRED_teste395"],
+          "base_default_next" : "node_35",
+          "next_tables" : {
+            "iRED_teste395" : "node_35"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste403",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 403,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["iRED_teste403"],
+          "base_default_next" : "node_35",
+          "next_tables" : {
+            "iRED_teste403" : "node_35"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste412",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 412,
+            "column" : 37,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["iRED_teste412"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "iRED_teste412" : null
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste419",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 419,
+            "column" : 20,
+            "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["iRED_teste419"],
+          "base_default_next" : "node_38",
+          "next_tables" : {
+            "iRED_teste419" : "node_38"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste426",
+          "id" : 21,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 426,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["iRED_teste426"],
+          "base_default_next" : "node_41",
+          "next_tables" : {
+            "iRED_teste426" : "node_41"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste434",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 434,
+            "column" : 24,
+            "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["iRED_teste434"],
+          "base_default_next" : "node_41",
+          "next_tables" : {
+            "iRED_teste434" : "node_41"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste443",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 443,
+            "column" : 56,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [27],
+          "actions" : ["iRED_teste443"],
+          "base_default_next" : "tbl_clonePacket",
+          "next_tables" : {
+            "iRED_teste443" : "tbl_clonePacket"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clonePacket",
+          "id" : 24,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 444,
+            "column" : 24,
+            "source_fragment" : "clonePacket()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["MyEgress.clonePacket"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.clonePacket" : null
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste454",
+          "id" : 25,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 454,
+            "column" : 33,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [29],
+          "actions" : ["iRED_teste454"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "iRED_teste454" : null
+          },
+          "default_entry" : {
+            "action_id" : 29,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_iRED_teste458",
+          "id" : 26,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 458,
+            "column" : 52,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [30],
+          "actions" : ["iRED_teste458"],
+          "base_default_next" : "tbl_clonePacket_0",
+          "next_tables" : {
+            "iRED_teste458" : "tbl_clonePacket_0"
+          },
+          "default_entry" : {
+            "action_id" : 30,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_clonePacket_0",
+          "id" : 27,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 459,
+            "column" : 20,
+            "source_fragment" : "clonePacket()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["MyEgress.clonePacket"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.clonePacket" : null
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_16",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 309,
+            "column" : 12,
+            "source_fragment" : "hdr.nodeCount.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["nodeCount", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "MyEgress.swtrace",
+          "false_next" : "node_18"
+        },
+        {
+          "name" : "node_18",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 316,
+            "column" : 12,
+            "source_fragment" : "standard_metadata.instance_type == BMV2_V1MODEL_INSTANCE_TYPE_EGRESS_CLONE"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "instance_type"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00000002"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste318",
+          "false_next" : "tbl_iRED_teste336"
+        },
+        {
+          "name" : "node_22",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 355,
+            "column" : 16,
+            "source_fragment" : "EWMA <= TARGET_DELAY"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<=",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["standard_metadata", "deq_timedelta"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "previousQDelay_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00004e20"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste357",
+          "false_next" : "node_24"
+        },
+        {
+          "name" : "node_24",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 362,
+            "column" : 16,
+            "source_fragment" : "(EWMA > TARGET_DELAY) && (EWMA < (TARGET_DELAY<<1))"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : ">",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : ">>",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["standard_metadata", "deq_timedelta"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x1"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : ">>",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "previousQDelay_0"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x1"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x00004e20"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "<",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "+",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : ">>",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["standard_metadata", "deq_timedelta"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x1"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : "&",
+                              "left" : {
+                                "type" : "expression",
+                                "value" : {
+                                  "op" : ">>",
+                                  "left" : {
+                                    "type" : "field",
+                                    "value" : ["scalars", "previousQDelay_0"]
+                                  },
+                                  "right" : {
+                                    "type" : "hexstr",
+                                    "value" : "0x1"
+                                  }
+                                }
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0xffffffff"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffffffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x00009c40"
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste364",
+          "false_next" : "node_26"
+        },
+        {
+          "name" : "node_26",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 369,
+            "column" : 16,
+            "source_fragment" : "EWMA > (TARGET_DELAY<<1)"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["standard_metadata", "deq_timedelta"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "expression",
+                            "value" : {
+                              "op" : ">>",
+                              "left" : {
+                                "type" : "field",
+                                "value" : ["scalars", "previousQDelay_0"]
+                              },
+                              "right" : {
+                                "type" : "hexstr",
+                                "value" : "0x1"
+                              }
+                            }
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0xffffffff"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00009c40"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste371",
+          "false_next" : "node_28"
+        },
+        {
+          "name" : "node_28",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 376,
+            "column" : 16,
+            "source_fragment" : "target_violation == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "target_violation_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste379",
+          "false_next" : "node_44"
+        },
+        {
+          "name" : "node_30",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 384,
+            "column" : 20,
+            "source_fragment" : "hdr.ipv4.l4s == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["ipv4", "l4s"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste387",
+          "false_next" : "tbl_iRED_teste419"
+        },
+        {
+          "name" : "node_32",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 391,
+            "column" : 24,
+            "source_fragment" : "rand_l4s < dropProb"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">>",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "rand_classic_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x1"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "dropProb_0"]
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste395",
+          "false_next" : "tbl_iRED_teste403"
+        },
+        {
+          "name" : "node_35",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 410,
+            "column" : 24,
+            "source_fragment" : "mark_decision_l4s"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "mark_decision_l4s_0"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_iRED_teste412"
+        },
+        {
+          "name" : "node_38",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 422,
+            "column" : 24,
+            "source_fragment" : "rand_classic < dropProb"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "rand_classic_0"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "dropProb_0"]
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste426",
+          "false_next" : "tbl_iRED_teste434"
+        },
+        {
+          "name" : "node_41",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 441,
+            "column" : 24,
+            "source_fragment" : "drop_decision_classic"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "drop_decision_classic_0"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_iRED_teste443"
+        },
+        {
+          "name" : "node_44",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 449,
+            "column" : 22,
+            "source_fragment" : "target_violation == 2"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "target_violation_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x02"
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "node_45"
+        },
+        {
+          "name" : "node_45",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "/vagrant/code/iRED_teste.p4",
+            "line" : 452,
+            "column" : 20,
+            "source_fragment" : "hdr.ipv4.l4s == 1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["ipv4", "l4s"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_iRED_teste454",
+          "false_next" : "tbl_iRED_teste458"
+        }
+      ]
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "/vagrant/code/iRED_teste.p4",
+        "line" : 473,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ],
+    [
+      "queueing_metadata.qid",
+      ["standard_metadata", "qid"]
+    ]
+  ],
+  "program" : "/vagrant/code/iRED_l4s.bmv2/iRED_teste.p4i",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

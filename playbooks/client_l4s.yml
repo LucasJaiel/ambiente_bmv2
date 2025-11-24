@@ -1,0 +1,28 @@
+---
+- name: Configurar cliente L4S
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Instalar net-tools (para comando arp)
+      apt:
+        name: net-tools
+        state: present
+        update_cache: yes
+
+    - block:  
+        - name: Del default route
+          command: ip route del default
+
+        - name: Habilitar ECN
+          command: sysctl -w net.ipv4.tcp_ecn=3
+
+        - name: Desativar offload TSO, GSO e GRO
+          command: ethtool -K enp0s8 tso off gso off gro off
+
+        - name: Configurar FQ no TC
+          command: "tc qdisc replace dev enp0s8 root handle 1: fq limit 20480 flow_limit 10240"
+        
+        - name: Ajuste arp table
+          command: arp -i enp0s8 -s 192.168.59.10 08:00:27:DD:DD:DD 
+      ignore_errors: yes
