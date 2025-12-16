@@ -497,7 +497,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "/vagrant/2code/v1_iRED_test.p4",
-        "line" : 589,
+        "line" : 592,
         "column" : 8,
         "source_fragment" : "MyDeparser"
       },
@@ -744,7 +744,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "/vagrant/2code/v1_iRED_test.p4",
-        "line" : 565,
+        "line" : 568,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
@@ -1924,7 +1924,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test362",
+      "name" : "v1_iRED_test364",
       "id" : 16,
       "runtime_data" : [],
       "primitives" : [
@@ -1955,8 +1955,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 362,
-            "column" : 34,
+            "line" : 364,
+            "column" : 38,
             "source_fragment" : "port_idx"
           }
         },
@@ -1997,8 +1997,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 362,
-            "column" : 44,
+            "line" : 364,
+            "column" : 48,
             "source_fragment" : "interval"
           }
         },
@@ -2020,15 +2020,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 362,
-            "column" : 20,
+            "line" : 364,
+            "column" : 24,
             "source_fragment" : "ipi_l4s.write(port_idx, interval)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test355",
+      "name" : "v1_iRED_test357",
       "id" : 17,
       "runtime_data" : [],
       "primitives" : [
@@ -2059,8 +2059,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 355,
-            "column" : 56,
+            "line" : 357,
+            "column" : 60,
             "source_fragment" : "port_idx"
           }
         },
@@ -2082,15 +2082,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 355,
-            "column" : 16,
+            "line" : 357,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_l4s.read(last_ts, port_idx)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test366",
+      "name" : "v1_iRED_test368",
       "id" : 18,
       "runtime_data" : [],
       "primitives" : [
@@ -2121,8 +2121,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 366,
-            "column" : 48,
+            "line" : 368,
+            "column" : 52,
             "source_fragment" : "port_idx"
           }
         },
@@ -2144,8 +2144,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 366,
-            "column" : 16,
+            "line" : 368,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_l4s.write(port_idx, current_timestamp)"
           }
         },
@@ -2176,8 +2176,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 370,
-            "column" : 50,
+            "line" : 372,
+            "column" : 54,
             "source_fragment" : "port_idx"
           }
         },
@@ -2199,8 +2199,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 370,
-            "column" : 16,
+            "line" : 372,
+            "column" : 20,
             "source_fragment" : "total_packets_l4s.read(total_l4s, port_idx)"
           }
         },
@@ -2231,8 +2231,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 371,
-            "column" : 40,
+            "line" : 373,
+            "column" : 44,
             "source_fragment" : "port_idx"
           }
         },
@@ -2273,8 +2273,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 371,
-            "column" : 50,
+            "line" : 373,
+            "column" : 54,
             "source_fragment" : "total_l4s + 1"
           }
         },
@@ -2296,15 +2296,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 371,
-            "column" : 16,
+            "line" : 373,
+            "column" : 20,
             "source_fragment" : "total_packets_l4s.write(port_idx, total_l4s + 1)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test383",
+      "name" : "v1_iRED_test385",
       "id" : 19,
       "runtime_data" : [],
       "primitives" : [
@@ -2335,8 +2335,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 383,
-            "column" : 38,
+            "line" : 385,
+            "column" : 42,
             "source_fragment" : "port_idx"
           }
         },
@@ -2377,8 +2377,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 383,
-            "column" : 48,
+            "line" : 385,
+            "column" : 52,
             "source_fragment" : "interval"
           }
         },
@@ -2400,15 +2400,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 383,
-            "column" : 20,
+            "line" : 385,
+            "column" : 24,
             "source_fragment" : "ipi_classic.write(port_idx, interval)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test376",
+      "name" : "v1_iRED_test378",
       "id" : 20,
       "runtime_data" : [],
       "primitives" : [
@@ -2439,8 +2439,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 376,
-            "column" : 60,
+            "line" : 378,
+            "column" : 64,
             "source_fragment" : "port_idx"
           }
         },
@@ -2462,15 +2462,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 376,
-            "column" : 16,
+            "line" : 378,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_classic.read(last_ts, port_idx)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test386",
+      "name" : "v1_iRED_test388",
       "id" : 21,
       "runtime_data" : [],
       "primitives" : [
@@ -2501,8 +2501,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 386,
-            "column" : 52,
+            "line" : 388,
+            "column" : 56,
             "source_fragment" : "port_idx"
           }
         },
@@ -2524,8 +2524,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 386,
-            "column" : 16,
+            "line" : 388,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_classic.write(port_idx, current_timestamp)"
           }
         },
@@ -2556,8 +2556,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 390,
-            "column" : 58,
+            "line" : 392,
+            "column" : 62,
             "source_fragment" : "port_idx"
           }
         },
@@ -2579,8 +2579,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 390,
-            "column" : 16,
+            "line" : 392,
+            "column" : 20,
             "source_fragment" : "total_packets_classic.read(total_classic, port_idx)"
           }
         },
@@ -2611,8 +2611,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 391,
-            "column" : 44,
+            "line" : 393,
+            "column" : 48,
             "source_fragment" : "port_idx"
           }
         },
@@ -2653,8 +2653,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 391,
-            "column" : 54,
+            "line" : 393,
+            "column" : 58,
             "source_fragment" : "total_classic + 1"
           }
         },
@@ -2676,15 +2676,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 391,
-            "column" : 16,
+            "line" : 393,
+            "column" : 20,
             "source_fragment" : "total_packets_classic.write(port_idx, total_classic + 1)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test416",
+      "name" : "v1_iRED_test418",
       "id" : 22,
       "runtime_data" : [],
       "primitives" : [
@@ -2715,7 +2715,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 416,
+            "line" : 418,
             "column" : 38,
             "source_fragment" : "port_idx"
           }
@@ -2797,7 +2797,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 416,
+            "line" : 418,
             "column" : 48,
             "source_fragment" : "EWMA"
           }
@@ -2820,7 +2820,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 416,
+            "line" : 418,
             "column" : 16,
             "source_fragment" : "queue_delay_l4s.write(port_idx, EWMA)"
           }
@@ -2828,7 +2828,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test418",
+      "name" : "v1_iRED_test420",
       "id" : 23,
       "runtime_data" : [],
       "primitives" : [
@@ -2859,7 +2859,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 418,
+            "line" : 420,
             "column" : 42,
             "source_fragment" : "port_idx"
           }
@@ -2941,7 +2941,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 418,
+            "line" : 420,
             "column" : 52,
             "source_fragment" : "EWMA"
           }
@@ -2964,7 +2964,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 418,
+            "line" : 420,
             "column" : 16,
             "source_fragment" : "queue_delay_classic.write(port_idx, EWMA)"
           }
@@ -2972,7 +2972,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test403",
+      "name" : "v1_iRED_test405",
       "id" : 24,
       "runtime_data" : [],
       "primitives" : [
@@ -3003,7 +3003,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 403,
+            "line" : 405,
             "column" : 44,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
@@ -3026,7 +3026,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 403,
+            "line" : 405,
             "column" : 12,
             "source_fragment" : "QDelay_reg.read(previousQDelay, (bit<32>)standard_metadata.egress_port)"
           }
@@ -3058,7 +3058,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 412,
+            "line" : 414,
             "column" : 29,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
@@ -3140,7 +3140,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 412,
+            "line" : 414,
             "column" : 69,
             "source_fragment" : "EWMA"
           }
@@ -3163,7 +3163,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 412,
+            "line" : 414,
             "column" : 12,
             "source_fragment" : "QDelay_reg.write((bit<32>)standard_metadata.egress_port, EWMA)"
           }
@@ -3171,7 +3171,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test431",
+      "name" : "v1_iRED_test433",
       "id" : 25,
       "runtime_data" : [],
       "primitives" : [
@@ -3189,7 +3189,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 431,
+            "line" : 433,
             "column" : 16,
             "source_fragment" : "target_violation = 0"
           }
@@ -3197,7 +3197,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test437",
+      "name" : "v1_iRED_test439",
       "id" : 26,
       "runtime_data" : [],
       "primitives" : [
@@ -3215,7 +3215,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 437,
+            "line" : 439,
             "column" : 16,
             "source_fragment" : "target_violation = 1"
           }
@@ -3223,7 +3223,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test443",
+      "name" : "v1_iRED_test445",
       "id" : 27,
       "runtime_data" : [],
       "primitives" : [
@@ -3241,7 +3241,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 443,
+            "line" : 445,
             "column" : 16,
             "source_fragment" : "target_violation = 2"
           }
@@ -3249,7 +3249,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test426",
+      "name" : "v1_iRED_test428",
       "id" : 28,
       "runtime_data" : [],
       "primitives" : [
@@ -3267,7 +3267,7 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 426,
+            "line" : 428,
             "column" : 12,
             "source_fragment" : "bit<8> target_violation = 0"
           }
@@ -3275,7 +3275,7 @@
       ]
     },
     {
-      "name" : "v1_iRED_test467",
+      "name" : "v1_iRED_test469",
       "id" : 29,
       "runtime_data" : [],
       "primitives" : [
@@ -3306,8 +3306,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 467,
-            "column" : 46,
+            "line" : 469,
+            "column" : 50,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -3348,8 +3348,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 467,
-            "column" : 85,
+            "line" : 469,
+            "column" : 89,
             "source_fragment" : "dropProb_temp"
           }
         },
@@ -3371,8 +3371,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 467,
-            "column" : 24,
+            "line" : 469,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
           }
         },
@@ -3384,31 +3384,21 @@
               "value" : ["scalars", "mark_decision_l4s_0"]
             },
             {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : true
-                  }
-                }
-              }
+              "type" : "hexstr",
+              "value" : "0x01"
             }
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 469,
-            "column" : 24,
-            "source_fragment" : "mark_decision_l4s = true"
+            "line" : 471,
+            "column" : 28,
+            "source_fragment" : "mark_decision_l4s = 1"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test475",
+      "name" : "v1_iRED_test477",
       "id" : 30,
       "runtime_data" : [],
       "primitives" : [
@@ -3439,8 +3429,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 475,
-            "column" : 46,
+            "line" : 477,
+            "column" : 50,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -3481,8 +3471,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 475,
-            "column" : 85,
+            "line" : 477,
+            "column" : 89,
             "source_fragment" : "dropProb_temp"
           }
         },
@@ -3504,8 +3494,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 475,
-            "column" : 24,
+            "line" : 477,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
           }
         },
@@ -3517,31 +3507,21 @@
               "value" : ["scalars", "mark_decision_l4s_0"]
             },
             {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : false
-                  }
-                }
-              }
+              "type" : "hexstr",
+              "value" : "0x00"
             }
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 477,
-            "column" : 24,
-            "source_fragment" : "mark_decision_l4s = false"
+            "line" : 479,
+            "column" : 28,
+            "source_fragment" : "mark_decision_l4s = 0"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test459",
+      "name" : "v1_iRED_test461",
       "id" : 31,
       "runtime_data" : [],
       "primitives" : [
@@ -3572,8 +3552,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 459,
-            "column" : 51,
+            "line" : 461,
+            "column" : 55,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -3595,15 +3575,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 459,
-            "column" : 20,
+            "line" : 461,
+            "column" : 24,
             "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test484",
+      "name" : "v1_iRED_test486",
       "id" : 32,
       "runtime_data" : [],
       "primitives" : [
@@ -3621,8 +3601,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 484,
-            "column" : 24,
+            "line" : 486,
+            "column" : 28,
             "source_fragment" : "hdr.ipv4.ecn = 3"
           }
         },
@@ -3653,8 +3633,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 488,
-            "column" : 61,
+            "line" : 490,
+            "column" : 65,
             "source_fragment" : "port_idx"
           }
         },
@@ -3676,8 +3656,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 488,
-            "column" : 24,
+            "line" : 490,
+            "column" : 28,
             "source_fragment" : "ce_marked_packets_l4s.read(ce_count, port_idx)"
           }
         },
@@ -3708,8 +3688,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 489,
-            "column" : 52,
+            "line" : 491,
+            "column" : 56,
             "source_fragment" : "port_idx"
           }
         },
@@ -3750,8 +3730,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 489,
-            "column" : 62,
+            "line" : 491,
+            "column" : 66,
             "source_fragment" : "ce_count + 1"
           }
         },
@@ -3773,15 +3753,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 489,
-            "column" : 24,
+            "line" : 491,
+            "column" : 28,
             "source_fragment" : "ce_marked_packets_l4s.write(port_idx, ce_count + 1)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test503",
+      "name" : "v1_iRED_test505",
       "id" : 33,
       "runtime_data" : [],
       "primitives" : [
@@ -3812,8 +3792,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 503,
-            "column" : 46,
+            "line" : 505,
+            "column" : 50,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -3854,8 +3834,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 503,
-            "column" : 85,
+            "line" : 505,
+            "column" : 89,
             "source_fragment" : "dropProb_temp"
           }
         },
@@ -3877,8 +3857,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 503,
-            "column" : 24,
+            "line" : 505,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
           }
         },
@@ -3890,31 +3870,21 @@
               "value" : ["scalars", "drop_decision_classic_0"]
             },
             {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : true
-                  }
-                }
-              }
+              "type" : "hexstr",
+              "value" : "0x01"
             }
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 505,
-            "column" : 24,
-            "source_fragment" : "drop_decision_classic = true"
+            "line" : 507,
+            "column" : 28,
+            "source_fragment" : "drop_decision_classic = 1"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test511",
+      "name" : "v1_iRED_test513",
       "id" : 34,
       "runtime_data" : [],
       "primitives" : [
@@ -3945,8 +3915,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 511,
-            "column" : 46,
+            "line" : 513,
+            "column" : 50,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -3987,8 +3957,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 511,
-            "column" : 85,
+            "line" : 513,
+            "column" : 89,
             "source_fragment" : "dropProb_temp"
           }
         },
@@ -4010,8 +3980,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 511,
-            "column" : 24,
+            "line" : 513,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp)"
           }
         },
@@ -4023,31 +3993,21 @@
               "value" : ["scalars", "drop_decision_classic_0"]
             },
             {
-              "type" : "expression",
-              "value" : {
-                "type" : "expression",
-                "value" : {
-                  "op" : "b2d",
-                  "left" : null,
-                  "right" : {
-                    "type" : "bool",
-                    "value" : false
-                  }
-                }
-              }
+              "type" : "hexstr",
+              "value" : "0x00"
             }
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 513,
-            "column" : 24,
-            "source_fragment" : "drop_decision_classic = false"
+            "line" : 515,
+            "column" : 28,
+            "source_fragment" : "drop_decision_classic = 0"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test496",
+      "name" : "v1_iRED_test498",
       "id" : 35,
       "runtime_data" : [],
       "primitives" : [
@@ -4078,8 +4038,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 496,
-            "column" : 51,
+            "line" : 498,
+            "column" : 55,
             "source_fragment" : "(bit<32>)standard_metadata.egress_port"
           }
         },
@@ -4101,15 +4061,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 496,
-            "column" : 20,
+            "line" : 498,
+            "column" : 24,
             "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test520",
+      "name" : "v1_iRED_test522",
       "id" : 36,
       "runtime_data" : [],
       "primitives" : [
@@ -4140,15 +4100,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 520,
-            "column" : 24,
+            "line" : 522,
+            "column" : 28,
             "source_fragment" : "meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test525",
+      "name" : "v1_iRED_test527",
       "id" : 37,
       "runtime_data" : [],
       "primitives" : [
@@ -4179,8 +4139,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 525,
-            "column" : 65,
+            "line" : 527,
+            "column" : 69,
             "source_fragment" : "port_idx"
           }
         },
@@ -4202,8 +4162,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 525,
-            "column" : 24,
+            "line" : 527,
+            "column" : 28,
             "source_fragment" : "dropped_packets_classic.read(drop_count, port_idx)"
           }
         },
@@ -4234,8 +4194,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 526,
-            "column" : 54,
+            "line" : 528,
+            "column" : 58,
             "source_fragment" : "port_idx"
           }
         },
@@ -4276,8 +4236,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 526,
-            "column" : 64,
+            "line" : 528,
+            "column" : 68,
             "source_fragment" : "drop_count + 1"
           }
         },
@@ -4299,15 +4259,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 526,
-            "column" : 24,
+            "line" : 528,
+            "column" : 28,
             "source_fragment" : "dropped_packets_classic.write(port_idx, drop_count + 1)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test451",
+      "name" : "v1_iRED_test453",
       "id" : 38,
       "runtime_data" : [],
       "primitives" : [
@@ -4329,15 +4289,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 451,
-            "column" : 16,
+            "line" : 453,
+            "column" : 20,
             "source_fragment" : "random(rand_classic, 0, 65535)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test536",
+      "name" : "v1_iRED_test538",
       "id" : 39,
       "runtime_data" : [],
       "primitives" : [
@@ -4355,8 +4315,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 536,
-            "column" : 20,
+            "line" : 538,
+            "column" : 24,
             "source_fragment" : "hdr.ipv4.ecn = 3"
           }
         },
@@ -4387,8 +4347,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 540,
-            "column" : 57,
+            "line" : 542,
+            "column" : 61,
             "source_fragment" : "port_idx"
           }
         },
@@ -4410,8 +4370,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 540,
-            "column" : 20,
+            "line" : 542,
+            "column" : 24,
             "source_fragment" : "ce_marked_packets_l4s.read(ce_count, port_idx)"
           }
         },
@@ -4442,8 +4402,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 541,
-            "column" : 48,
+            "line" : 543,
+            "column" : 52,
             "source_fragment" : "port_idx"
           }
         },
@@ -4484,8 +4444,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 541,
-            "column" : 58,
+            "line" : 543,
+            "column" : 62,
             "source_fragment" : "ce_count + 1"
           }
         },
@@ -4507,15 +4467,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 541,
-            "column" : 20,
+            "line" : 543,
+            "column" : 24,
             "source_fragment" : "ce_marked_packets_l4s.write(port_idx, ce_count + 1)"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test545",
+      "name" : "v1_iRED_test547",
       "id" : 40,
       "runtime_data" : [],
       "primitives" : [
@@ -4546,15 +4506,15 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 545,
-            "column" : 20,
+            "line" : 547,
+            "column" : 24,
             "source_fragment" : "meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port"
           }
         }
       ]
     },
     {
-      "name" : "v1_iRED_test550",
+      "name" : "v1_iRED_test552",
       "id" : 41,
       "runtime_data" : [],
       "primitives" : [
@@ -4585,8 +4545,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 550,
-            "column" : 61,
+            "line" : 552,
+            "column" : 65,
             "source_fragment" : "port_idx"
           }
         },
@@ -4608,8 +4568,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 550,
-            "column" : 20,
+            "line" : 552,
+            "column" : 24,
             "source_fragment" : "dropped_packets_classic.read(drop_count, port_idx)"
           }
         },
@@ -4640,8 +4600,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 551,
-            "column" : 50,
+            "line" : 553,
+            "column" : 54,
             "source_fragment" : "port_idx"
           }
         },
@@ -4682,8 +4642,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 551,
-            "column" : 60,
+            "line" : 553,
+            "column" : 64,
             "source_fragment" : "drop_count + 1"
           }
         },
@@ -4705,8 +4665,8 @@
           ],
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 551,
-            "column" : 20,
+            "line" : 553,
+            "column" : 24,
             "source_fragment" : "dropped_packets_classic.write(port_idx, drop_count + 1)"
           }
         }
@@ -5223,12 +5183,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test355",
+          "name" : "tbl_v1_iRED_test357",
           "id" : 11,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 355,
-            "column" : 16,
+            "line" : 357,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_l4s.read(last_ts, port_idx)"
           },
           "key" : [],
@@ -5239,10 +5199,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [17],
-          "actions" : ["v1_iRED_test355"],
-          "base_default_next" : "node_23",
+          "actions" : ["v1_iRED_test357"],
+          "base_default_next" : "node_24",
           "next_tables" : {
-            "v1_iRED_test355" : "node_23"
+            "v1_iRED_test357" : "node_24"
           },
           "default_entry" : {
             "action_id" : 17,
@@ -5252,12 +5212,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test362",
+          "name" : "tbl_v1_iRED_test364",
           "id" : 12,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 362,
-            "column" : 20,
+            "line" : 364,
+            "column" : 24,
             "source_fragment" : "ipi_l4s.write(port_idx, interval)"
           },
           "key" : [],
@@ -5268,10 +5228,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [16],
-          "actions" : ["v1_iRED_test362"],
-          "base_default_next" : "tbl_v1_iRED_test366",
+          "actions" : ["v1_iRED_test364"],
+          "base_default_next" : "tbl_v1_iRED_test368",
           "next_tables" : {
-            "v1_iRED_test362" : "tbl_v1_iRED_test366"
+            "v1_iRED_test364" : "tbl_v1_iRED_test368"
           },
           "default_entry" : {
             "action_id" : 16,
@@ -5281,12 +5241,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test366",
+          "name" : "tbl_v1_iRED_test368",
           "id" : 13,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 366,
-            "column" : 16,
+            "line" : 368,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_l4s.write(port_idx, current_timestamp); ..."
           },
           "key" : [],
@@ -5297,10 +5257,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [18],
-          "actions" : ["v1_iRED_test366"],
-          "base_default_next" : "tbl_v1_iRED_test403",
+          "actions" : ["v1_iRED_test368"],
+          "base_default_next" : "tbl_v1_iRED_test405",
           "next_tables" : {
-            "v1_iRED_test366" : "tbl_v1_iRED_test403"
+            "v1_iRED_test368" : "tbl_v1_iRED_test405"
           },
           "default_entry" : {
             "action_id" : 18,
@@ -5310,12 +5270,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test376",
+          "name" : "tbl_v1_iRED_test378",
           "id" : 14,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 376,
-            "column" : 16,
+            "line" : 378,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_classic.read(last_ts, port_idx)"
           },
           "key" : [],
@@ -5326,10 +5286,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [20],
-          "actions" : ["v1_iRED_test376"],
-          "base_default_next" : "node_27",
+          "actions" : ["v1_iRED_test378"],
+          "base_default_next" : "node_28",
           "next_tables" : {
-            "v1_iRED_test376" : "node_27"
+            "v1_iRED_test378" : "node_28"
           },
           "default_entry" : {
             "action_id" : 20,
@@ -5339,12 +5299,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test383",
+          "name" : "tbl_v1_iRED_test385",
           "id" : 15,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 383,
-            "column" : 20,
+            "line" : 385,
+            "column" : 24,
             "source_fragment" : "ipi_classic.write(port_idx, interval)"
           },
           "key" : [],
@@ -5355,10 +5315,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [19],
-          "actions" : ["v1_iRED_test383"],
-          "base_default_next" : "tbl_v1_iRED_test386",
+          "actions" : ["v1_iRED_test385"],
+          "base_default_next" : "tbl_v1_iRED_test388",
           "next_tables" : {
-            "v1_iRED_test383" : "tbl_v1_iRED_test386"
+            "v1_iRED_test385" : "tbl_v1_iRED_test388"
           },
           "default_entry" : {
             "action_id" : 19,
@@ -5368,12 +5328,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test386",
+          "name" : "tbl_v1_iRED_test388",
           "id" : 16,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 386,
-            "column" : 16,
+            "line" : 388,
+            "column" : 20,
             "source_fragment" : "last_packet_timestamp_classic.write(port_idx, current_timestamp); ..."
           },
           "key" : [],
@@ -5384,10 +5344,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [21],
-          "actions" : ["v1_iRED_test386"],
-          "base_default_next" : "tbl_v1_iRED_test403",
+          "actions" : ["v1_iRED_test388"],
+          "base_default_next" : "tbl_v1_iRED_test405",
           "next_tables" : {
-            "v1_iRED_test386" : "tbl_v1_iRED_test403"
+            "v1_iRED_test388" : "tbl_v1_iRED_test405"
           },
           "default_entry" : {
             "action_id" : 21,
@@ -5397,11 +5357,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test403",
+          "name" : "tbl_v1_iRED_test405",
           "id" : 17,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 403,
+            "line" : 405,
             "column" : 12,
             "source_fragment" : "QDelay_reg.read(previousQDelay, (bit<32>)standard_metadata.egress_port); ..."
           },
@@ -5413,10 +5373,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [24],
-          "actions" : ["v1_iRED_test403"],
-          "base_default_next" : "node_31",
+          "actions" : ["v1_iRED_test405"],
+          "base_default_next" : "node_32",
           "next_tables" : {
-            "v1_iRED_test403" : "node_31"
+            "v1_iRED_test405" : "node_32"
           },
           "default_entry" : {
             "action_id" : 24,
@@ -5426,11 +5386,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test416",
+          "name" : "tbl_v1_iRED_test418",
           "id" : 18,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 416,
+            "line" : 418,
             "column" : 16,
             "source_fragment" : "queue_delay_l4s.write(port_idx, EWMA)"
           },
@@ -5442,10 +5402,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [22],
-          "actions" : ["v1_iRED_test416"],
-          "base_default_next" : "tbl_v1_iRED_test426",
+          "actions" : ["v1_iRED_test418"],
+          "base_default_next" : "tbl_v1_iRED_test428",
           "next_tables" : {
-            "v1_iRED_test416" : "tbl_v1_iRED_test426"
+            "v1_iRED_test418" : "tbl_v1_iRED_test428"
           },
           "default_entry" : {
             "action_id" : 22,
@@ -5455,11 +5415,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test418",
+          "name" : "tbl_v1_iRED_test420",
           "id" : 19,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 418,
+            "line" : 420,
             "column" : 16,
             "source_fragment" : "queue_delay_classic.write(port_idx, EWMA)"
           },
@@ -5471,10 +5431,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [23],
-          "actions" : ["v1_iRED_test418"],
-          "base_default_next" : "tbl_v1_iRED_test426",
+          "actions" : ["v1_iRED_test420"],
+          "base_default_next" : "tbl_v1_iRED_test428",
           "next_tables" : {
-            "v1_iRED_test418" : "tbl_v1_iRED_test426"
+            "v1_iRED_test420" : "tbl_v1_iRED_test428"
           },
           "default_entry" : {
             "action_id" : 23,
@@ -5484,11 +5444,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test426",
+          "name" : "tbl_v1_iRED_test428",
           "id" : 20,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 426,
+            "line" : 428,
             "column" : 12,
             "source_fragment" : "bit<8> target_violation = 0"
           },
@@ -5500,10 +5460,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [28],
-          "actions" : ["v1_iRED_test426"],
-          "base_default_next" : "node_35",
+          "actions" : ["v1_iRED_test428"],
+          "base_default_next" : "node_36",
           "next_tables" : {
-            "v1_iRED_test426" : "node_35"
+            "v1_iRED_test428" : "node_36"
           },
           "default_entry" : {
             "action_id" : 28,
@@ -5513,11 +5473,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test431",
+          "name" : "tbl_v1_iRED_test433",
           "id" : 21,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 431,
+            "line" : 433,
             "column" : 33,
             "source_fragment" : "="
           },
@@ -5529,10 +5489,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [25],
-          "actions" : ["v1_iRED_test431"],
-          "base_default_next" : "node_41",
+          "actions" : ["v1_iRED_test433"],
+          "base_default_next" : "node_42",
           "next_tables" : {
-            "v1_iRED_test431" : "node_41"
+            "v1_iRED_test433" : "node_42"
           },
           "default_entry" : {
             "action_id" : 25,
@@ -5542,11 +5502,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test437",
+          "name" : "tbl_v1_iRED_test439",
           "id" : 22,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 437,
+            "line" : 439,
             "column" : 33,
             "source_fragment" : "="
           },
@@ -5558,10 +5518,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [26],
-          "actions" : ["v1_iRED_test437"],
-          "base_default_next" : "node_41",
+          "actions" : ["v1_iRED_test439"],
+          "base_default_next" : "node_42",
           "next_tables" : {
-            "v1_iRED_test437" : "node_41"
+            "v1_iRED_test439" : "node_42"
           },
           "default_entry" : {
             "action_id" : 26,
@@ -5571,11 +5531,11 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test443",
+          "name" : "tbl_v1_iRED_test445",
           "id" : 23,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 443,
+            "line" : 445,
             "column" : 33,
             "source_fragment" : "="
           },
@@ -5587,10 +5547,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [27],
-          "actions" : ["v1_iRED_test443"],
-          "base_default_next" : "node_41",
+          "actions" : ["v1_iRED_test445"],
+          "base_default_next" : "node_42",
           "next_tables" : {
-            "v1_iRED_test443" : "node_41"
+            "v1_iRED_test445" : "node_42"
           },
           "default_entry" : {
             "action_id" : 27,
@@ -5600,12 +5560,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test451",
+          "name" : "tbl_v1_iRED_test453",
           "id" : 24,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 451,
-            "column" : 16,
+            "line" : 453,
+            "column" : 20,
             "source_fragment" : "random(rand_classic, 0, 65535)"
           },
           "key" : [],
@@ -5616,10 +5576,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [38],
-          "actions" : ["v1_iRED_test451"],
-          "base_default_next" : "node_43",
+          "actions" : ["v1_iRED_test453"],
+          "base_default_next" : "node_44",
           "next_tables" : {
-            "v1_iRED_test451" : "node_43"
+            "v1_iRED_test453" : "node_44"
           },
           "default_entry" : {
             "action_id" : 38,
@@ -5629,12 +5589,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test459",
+          "name" : "tbl_v1_iRED_test461",
           "id" : 25,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 459,
-            "column" : 20,
+            "line" : 461,
+            "column" : 24,
             "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
           },
           "key" : [],
@@ -5645,10 +5605,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [31],
-          "actions" : ["v1_iRED_test459"],
-          "base_default_next" : "node_45",
+          "actions" : ["v1_iRED_test461"],
+          "base_default_next" : "node_46",
           "next_tables" : {
-            "v1_iRED_test459" : "node_45"
+            "v1_iRED_test461" : "node_46"
           },
           "default_entry" : {
             "action_id" : 31,
@@ -5658,12 +5618,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test467",
+          "name" : "tbl_v1_iRED_test469",
           "id" : 26,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 467,
-            "column" : 24,
+            "line" : 469,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
           },
           "key" : [],
@@ -5674,10 +5634,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [29],
-          "actions" : ["v1_iRED_test467"],
-          "base_default_next" : "node_48",
+          "actions" : ["v1_iRED_test469"],
+          "base_default_next" : "node_49",
           "next_tables" : {
-            "v1_iRED_test467" : "node_48"
+            "v1_iRED_test469" : "node_49"
           },
           "default_entry" : {
             "action_id" : 29,
@@ -5687,12 +5647,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test475",
+          "name" : "tbl_v1_iRED_test477",
           "id" : 27,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 475,
-            "column" : 24,
+            "line" : 477,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
           },
           "key" : [],
@@ -5703,10 +5663,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [30],
-          "actions" : ["v1_iRED_test475"],
-          "base_default_next" : "node_48",
+          "actions" : ["v1_iRED_test477"],
+          "base_default_next" : "node_49",
           "next_tables" : {
-            "v1_iRED_test475" : "node_48"
+            "v1_iRED_test477" : "node_49"
           },
           "default_entry" : {
             "action_id" : 30,
@@ -5716,12 +5676,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test484",
+          "name" : "tbl_v1_iRED_test486",
           "id" : 28,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 484,
-            "column" : 37,
+            "line" : 486,
+            "column" : 41,
             "source_fragment" : "= 3; ..."
           },
           "key" : [],
@@ -5732,10 +5692,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [32],
-          "actions" : ["v1_iRED_test484"],
+          "actions" : ["v1_iRED_test486"],
           "base_default_next" : null,
           "next_tables" : {
-            "v1_iRED_test484" : null
+            "v1_iRED_test486" : null
           },
           "default_entry" : {
             "action_id" : 32,
@@ -5745,12 +5705,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test496",
+          "name" : "tbl_v1_iRED_test498",
           "id" : 29,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 496,
-            "column" : 20,
+            "line" : 498,
+            "column" : 24,
             "source_fragment" : "dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port)"
           },
           "key" : [],
@@ -5761,10 +5721,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [35],
-          "actions" : ["v1_iRED_test496"],
-          "base_default_next" : "node_51",
+          "actions" : ["v1_iRED_test498"],
+          "base_default_next" : "node_52",
           "next_tables" : {
-            "v1_iRED_test496" : "node_51"
+            "v1_iRED_test498" : "node_52"
           },
           "default_entry" : {
             "action_id" : 35,
@@ -5774,12 +5734,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test503",
+          "name" : "tbl_v1_iRED_test505",
           "id" : 30,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 503,
-            "column" : 24,
+            "line" : 505,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
           },
           "key" : [],
@@ -5790,10 +5750,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [33],
-          "actions" : ["v1_iRED_test503"],
-          "base_default_next" : "node_54",
+          "actions" : ["v1_iRED_test505"],
+          "base_default_next" : "node_55",
           "next_tables" : {
-            "v1_iRED_test503" : "node_54"
+            "v1_iRED_test505" : "node_55"
           },
           "default_entry" : {
             "action_id" : 33,
@@ -5803,12 +5763,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test511",
+          "name" : "tbl_v1_iRED_test513",
           "id" : 31,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 511,
-            "column" : 24,
+            "line" : 513,
+            "column" : 28,
             "source_fragment" : "dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp); ..."
           },
           "key" : [],
@@ -5819,10 +5779,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [34],
-          "actions" : ["v1_iRED_test511"],
-          "base_default_next" : "node_54",
+          "actions" : ["v1_iRED_test513"],
+          "base_default_next" : "node_55",
           "next_tables" : {
-            "v1_iRED_test511" : "node_54"
+            "v1_iRED_test513" : "node_55"
           },
           "default_entry" : {
             "action_id" : 34,
@@ -5832,12 +5792,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test520",
+          "name" : "tbl_v1_iRED_test522",
           "id" : 32,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 520,
-            "column" : 56,
+            "line" : 522,
+            "column" : 60,
             "source_fragment" : "="
           },
           "key" : [],
@@ -5848,10 +5808,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [36],
-          "actions" : ["v1_iRED_test520"],
+          "actions" : ["v1_iRED_test522"],
           "base_default_next" : "tbl_clonePacket",
           "next_tables" : {
-            "v1_iRED_test520" : "tbl_clonePacket"
+            "v1_iRED_test522" : "tbl_clonePacket"
           },
           "default_entry" : {
             "action_id" : 36,
@@ -5865,8 +5825,8 @@
           "id" : 33,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 521,
-            "column" : 24,
+            "line" : 523,
+            "column" : 28,
             "source_fragment" : "clonePacket()"
           },
           "key" : [],
@@ -5878,9 +5838,9 @@
           "direct_meters" : null,
           "action_ids" : [11],
           "actions" : ["MyEgress.clonePacket"],
-          "base_default_next" : "tbl_v1_iRED_test525",
+          "base_default_next" : "tbl_v1_iRED_test527",
           "next_tables" : {
-            "MyEgress.clonePacket" : "tbl_v1_iRED_test525"
+            "MyEgress.clonePacket" : "tbl_v1_iRED_test527"
           },
           "default_entry" : {
             "action_id" : 11,
@@ -5890,12 +5850,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test525",
+          "name" : "tbl_v1_iRED_test527",
           "id" : 34,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 525,
-            "column" : 24,
+            "line" : 527,
+            "column" : 28,
             "source_fragment" : "dropped_packets_classic.read(drop_count, port_idx); ..."
           },
           "key" : [],
@@ -5906,10 +5866,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [37],
-          "actions" : ["v1_iRED_test525"],
+          "actions" : ["v1_iRED_test527"],
           "base_default_next" : null,
           "next_tables" : {
-            "v1_iRED_test525" : null
+            "v1_iRED_test527" : null
           },
           "default_entry" : {
             "action_id" : 37,
@@ -5919,12 +5879,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test536",
+          "name" : "tbl_v1_iRED_test538",
           "id" : 35,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 536,
-            "column" : 33,
+            "line" : 538,
+            "column" : 37,
             "source_fragment" : "= 3; ..."
           },
           "key" : [],
@@ -5935,10 +5895,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [39],
-          "actions" : ["v1_iRED_test536"],
+          "actions" : ["v1_iRED_test538"],
           "base_default_next" : null,
           "next_tables" : {
-            "v1_iRED_test536" : null
+            "v1_iRED_test538" : null
           },
           "default_entry" : {
             "action_id" : 39,
@@ -5948,12 +5908,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test545",
+          "name" : "tbl_v1_iRED_test547",
           "id" : 36,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 545,
-            "column" : 52,
+            "line" : 547,
+            "column" : 56,
             "source_fragment" : "="
           },
           "key" : [],
@@ -5964,10 +5924,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [40],
-          "actions" : ["v1_iRED_test545"],
+          "actions" : ["v1_iRED_test547"],
           "base_default_next" : "tbl_clonePacket_0",
           "next_tables" : {
-            "v1_iRED_test545" : "tbl_clonePacket_0"
+            "v1_iRED_test547" : "tbl_clonePacket_0"
           },
           "default_entry" : {
             "action_id" : 40,
@@ -5981,8 +5941,8 @@
           "id" : 37,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 546,
-            "column" : 20,
+            "line" : 548,
+            "column" : 24,
             "source_fragment" : "clonePacket()"
           },
           "key" : [],
@@ -5994,9 +5954,9 @@
           "direct_meters" : null,
           "action_ids" : [12],
           "actions" : ["MyEgress.clonePacket"],
-          "base_default_next" : "tbl_v1_iRED_test550",
+          "base_default_next" : "tbl_v1_iRED_test552",
           "next_tables" : {
-            "MyEgress.clonePacket" : "tbl_v1_iRED_test550"
+            "MyEgress.clonePacket" : "tbl_v1_iRED_test552"
           },
           "default_entry" : {
             "action_id" : 12,
@@ -6006,12 +5966,12 @@
           }
         },
         {
-          "name" : "tbl_v1_iRED_test550",
+          "name" : "tbl_v1_iRED_test552",
           "id" : 38,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 550,
-            "column" : 20,
+            "line" : 552,
+            "column" : 24,
             "source_fragment" : "dropped_packets_classic.read(drop_count, port_idx); ..."
           },
           "key" : [],
@@ -6022,10 +5982,10 @@
           "support_timeout" : false,
           "direct_meters" : null,
           "action_ids" : [41],
-          "actions" : ["v1_iRED_test550"],
+          "actions" : ["v1_iRED_test552"],
           "base_default_next" : null,
           "next_tables" : {
-            "v1_iRED_test550" : null
+            "v1_iRED_test552" : null
           },
           "default_entry" : {
             "action_id" : 41,
@@ -6091,9 +6051,32 @@
           "id" : 6,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 352,
+            "line" : 346,
             "column" : 16,
-            "source_fragment" : "is_l4s"
+            "source_fragment" : "hdr.ipv4.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4", "$valid$"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "node_22"
+        },
+        {
+          "name" : "node_22",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "/vagrant/2code/v1_iRED_test.p4",
+            "line" : 354,
+            "column" : 20,
+            "source_fragment" : "hdr.ipv4.l4s == 1"
           },
           "expression" : {
             "type" : "expression",
@@ -6109,16 +6092,16 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test355",
-          "false_next" : "tbl_v1_iRED_test376"
+          "true_next" : "tbl_v1_iRED_test357",
+          "false_next" : "tbl_v1_iRED_test378"
         },
         {
-          "name" : "node_23",
-          "id" : 7,
+          "name" : "node_24",
+          "id" : 8,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 357,
-            "column" : 20,
+            "line" : 359,
+            "column" : 24,
             "source_fragment" : "last_ts != 0"
           },
           "expression" : {
@@ -6135,16 +6118,16 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test362",
-          "false_next" : "tbl_v1_iRED_test366"
+          "true_next" : "tbl_v1_iRED_test364",
+          "false_next" : "tbl_v1_iRED_test368"
         },
         {
-          "name" : "node_27",
-          "id" : 8,
+          "name" : "node_28",
+          "id" : 9,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 378,
-            "column" : 20,
+            "line" : 380,
+            "column" : 24,
             "source_fragment" : "last_ts != 0"
           },
           "expression" : {
@@ -6161,17 +6144,17 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test383",
-          "false_next" : "tbl_v1_iRED_test386"
+          "true_next" : "tbl_v1_iRED_test385",
+          "false_next" : "tbl_v1_iRED_test388"
         },
         {
-          "name" : "node_31",
-          "id" : 9,
+          "name" : "node_32",
+          "id" : 10,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 415,
+            "line" : 417,
             "column" : 16,
-            "source_fragment" : "is_l4s"
+            "source_fragment" : "hdr.ipv4.l4s == 1"
           },
           "expression" : {
             "type" : "expression",
@@ -6187,15 +6170,15 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test416",
-          "false_next" : "tbl_v1_iRED_test418"
+          "true_next" : "tbl_v1_iRED_test418",
+          "false_next" : "tbl_v1_iRED_test420"
         },
         {
-          "name" : "node_35",
-          "id" : 10,
+          "name" : "node_36",
+          "id" : 11,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 429,
+            "line" : 431,
             "column" : 16,
             "source_fragment" : "EWMA <= TARGET_DELAY"
           },
@@ -6273,15 +6256,15 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test431",
-          "false_next" : "node_37"
+          "true_next" : "tbl_v1_iRED_test433",
+          "false_next" : "node_38"
         },
         {
-          "name" : "node_37",
-          "id" : 11,
+          "name" : "node_38",
+          "id" : 12,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 435,
+            "line" : 437,
             "column" : 21,
             "source_fragment" : "(EWMA > TARGET_DELAY) && (EWMA < (TARGET_DELAY<<1))"
           },
@@ -6439,15 +6422,15 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test437",
-          "false_next" : "node_39"
+          "true_next" : "tbl_v1_iRED_test439",
+          "false_next" : "node_40"
         },
         {
-          "name" : "node_39",
-          "id" : 12,
+          "name" : "node_40",
+          "id" : 13,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 441,
+            "line" : 443,
             "column" : 21,
             "source_fragment" : "EWMA >= (TARGET_DELAY<<1)"
           },
@@ -6525,16 +6508,16 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test443",
-          "false_next" : "node_41"
+          "true_next" : "tbl_v1_iRED_test445",
+          "false_next" : "node_42"
         },
         {
-          "name" : "node_41",
-          "id" : 13,
+          "name" : "node_42",
+          "id" : 14,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 448,
-            "column" : 16,
+            "line" : 450,
+            "column" : 20,
             "source_fragment" : "target_violation == 1"
           },
           "expression" : {
@@ -6551,16 +6534,16 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test451",
-          "false_next" : "node_58"
+          "true_next" : "tbl_v1_iRED_test453",
+          "false_next" : "node_59"
         },
         {
-          "name" : "node_43",
-          "id" : 14,
+          "name" : "node_44",
+          "id" : 15,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 456,
-            "column" : 20,
+            "line" : 458,
+            "column" : 24,
             "source_fragment" : "hdr.ipv4.l4s == 1"
           },
           "expression" : {
@@ -6577,16 +6560,16 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test459",
-          "false_next" : "tbl_v1_iRED_test496"
+          "true_next" : "tbl_v1_iRED_test461",
+          "false_next" : "tbl_v1_iRED_test498"
         },
         {
-          "name" : "node_45",
-          "id" : 15,
+          "name" : "node_46",
+          "id" : 16,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 463,
-            "column" : 24,
+            "line" : 465,
+            "column" : 28,
             "source_fragment" : "rand_l4s < dropProb"
           },
           "expression" : {
@@ -6623,39 +6606,42 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test467",
-          "false_next" : "tbl_v1_iRED_test475"
+          "true_next" : "tbl_v1_iRED_test469",
+          "false_next" : "tbl_v1_iRED_test477"
         },
         {
-          "name" : "node_48",
-          "id" : 16,
+          "name" : "node_49",
+          "id" : 17,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 482,
-            "column" : 24,
-            "source_fragment" : "mark_decision_l4s"
+            "line" : 484,
+            "column" : 28,
+            "source_fragment" : "mark_decision_l4s == 1"
           },
           "expression" : {
             "type" : "expression",
             "value" : {
-              "op" : "d2b",
-              "left" : null,
-              "right" : {
+              "op" : "==",
+              "left" : {
                 "type" : "field",
                 "value" : ["scalars", "mark_decision_l4s_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
               }
             }
           },
           "false_next" : null,
-          "true_next" : "tbl_v1_iRED_test484"
+          "true_next" : "tbl_v1_iRED_test486"
         },
         {
-          "name" : "node_51",
-          "id" : 17,
+          "name" : "node_52",
+          "id" : 18,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 499,
-            "column" : 24,
+            "line" : 501,
+            "column" : 28,
             "source_fragment" : "rand_classic < dropProb"
           },
           "expression" : {
@@ -6672,39 +6658,42 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test503",
-          "false_next" : "tbl_v1_iRED_test511"
+          "true_next" : "tbl_v1_iRED_test505",
+          "false_next" : "tbl_v1_iRED_test513"
         },
         {
-          "name" : "node_54",
-          "id" : 18,
+          "name" : "node_55",
+          "id" : 19,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 518,
-            "column" : 24,
-            "source_fragment" : "drop_decision_classic"
+            "line" : 520,
+            "column" : 28,
+            "source_fragment" : "drop_decision_classic == 1"
           },
           "expression" : {
             "type" : "expression",
             "value" : {
-              "op" : "d2b",
-              "left" : null,
-              "right" : {
+              "op" : "==",
+              "left" : {
                 "type" : "field",
                 "value" : ["scalars", "drop_decision_classic_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
               }
             }
           },
           "false_next" : null,
-          "true_next" : "tbl_v1_iRED_test520"
+          "true_next" : "tbl_v1_iRED_test522"
         },
         {
-          "name" : "node_58",
-          "id" : 19,
+          "name" : "node_59",
+          "id" : 20,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 531,
-            "column" : 22,
+            "line" : 533,
+            "column" : 26,
             "source_fragment" : "target_violation == 2"
           },
           "expression" : {
@@ -6722,15 +6711,15 @@
             }
           },
           "false_next" : null,
-          "true_next" : "node_59"
+          "true_next" : "node_60"
         },
         {
-          "name" : "node_59",
-          "id" : 20,
+          "name" : "node_60",
+          "id" : 21,
           "source_info" : {
             "filename" : "/vagrant/2code/v1_iRED_test.p4",
-            "line" : 534,
-            "column" : 20,
+            "line" : 536,
+            "column" : 24,
             "source_fragment" : "hdr.ipv4.l4s == 1"
           },
           "expression" : {
@@ -6747,8 +6736,8 @@
               }
             }
           },
-          "true_next" : "tbl_v1_iRED_test536",
-          "false_next" : "tbl_v1_iRED_test545"
+          "true_next" : "tbl_v1_iRED_test538",
+          "false_next" : "tbl_v1_iRED_test547"
         }
       ]
     }
@@ -6759,7 +6748,7 @@
       "id" : 0,
       "source_info" : {
         "filename" : "/vagrant/2code/v1_iRED_test.p4",
-        "line" : 565,
+        "line" : 568,
         "column" : 1,
         "source_fragment" : "update_checksum( ..."
       },
@@ -6825,7 +6814,7 @@
       ["standard_metadata", "qid"]
     ]
   ],
-  "program" : "/vagrant/2code/v1_iRED_test.bmv2/v1_iRED_test.p4i",
+  "program" : "/vagrant/2code/v1_iRED_l4s.bmv2/v1_iRED_test.p4i",
   "__meta__" : {
     "version" : [2, 23],
     "compiler" : "https://github.com/p4lang/p4c"

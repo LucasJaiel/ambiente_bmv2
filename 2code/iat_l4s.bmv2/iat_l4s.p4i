@@ -1,7 +1,7 @@
-# 1 "/vagrant/2code/v1_iRED_test.p4"
+# 1 "/vagrant/2code/iat_l4s.p4"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/vagrant/2code/v1_iRED_test.p4"
+# 1 "/vagrant/2code/iat_l4s.p4"
 /* -*- P4_16 -*- */
 # 1 "/usr/local/share/p4c/p4include/core.p4" 1
 /*
@@ -97,7 +97,7 @@ extern bool static_assert(bool check, string message);
 
 /// Like the above but using a default message.
 extern bool static_assert(bool check);
-# 3 "/vagrant/2code/v1_iRED_test.p4" 2
+# 3 "/vagrant/2code/iat_l4s.p4" 2
 # 1 "/usr/local/share/p4c/p4include/v1model.p4" 1
 /*
 Copyright 2013-present Barefoot Networks, Inc.
@@ -885,13 +885,16 @@ package V1Switch<H, M>(Parser<H, M> p,
                        ComputeChecksum<H, M> ck,
                        Deparser<H> dep
                        );
-# 4 "/vagrant/2code/v1_iRED_test.p4" 2
+# 4 "/vagrant/2code/iat_l4s.p4" 2
+
 
 
 
 
 const bit<16> TYPE_IPV4 = 0x800;
 const bit<8> IP_PROTO = 253;
+const bit<8> PROTO_TCP = 6;
+const bit<8> PROTO_UDP = 17;
 
 const bit<32> BMV2_V1MODEL_INSTANCE_TYPE_NORMAL = 0;
 const bit<32> BMV2_V1MODEL_INSTANCE_TYPE_INGRESS_CLONE = 1;
@@ -905,10 +908,8 @@ const bit<32> BMV2_V1MODEL_INSTANCE_TYPE_RESUBMIT = 6;
 *********************** H E A D E R S  ***********************************
 *************************************************************************/
 
-
 typedef bit<48> macAddr_v;
 typedef bit<32> ip4Addr_v;
-
 typedef bit<31> switchID_v;
 typedef bit<9> ingress_port_v;
 typedef bit<9> egress_port_v;
@@ -941,6 +942,28 @@ header ipv4_h {
     bit<16> hdrChecksum;
     ip4Addr_v srcAddr;
     ip4Addr_v dstAddr;
+}
+
+// ========== NOVOS HEADERS PARA EXTRAIR PORTAS ==========
+header tcp_h {
+    bit<16> srcPort;
+    bit<16> dstPort;
+    bit<32> seqNo;
+    bit<32> ackNo;
+    bit<4> dataOffset;
+    bit<3> res;
+    bit<3> ecn;
+    bit<6> ctrl;
+    bit<16> window;
+    bit<16> checksum;
+    bit<16> urgentPtr;
+}
+
+header udp_h {
+    bit<16> srcPort;
+    bit<16> dstPort;
+    bit<16> length_;
+    bit<16> checksum;
 }
 
 header nodeCount_h{
@@ -982,6 +1005,8 @@ struct metadata {
 struct headers {
     ethernet_h ethernet;
     ipv4_h ipv4;
+    tcp_h tcp;
+    udp_h udp;
     nodeCount_h nodeCount;
     InBandNetworkTelemetry_h[10] INT;
 }
@@ -1010,9 +1035,22 @@ parser MyParser(packet_in packet,
     state parse_ipv4 {
         packet.extract(hdr.ipv4);
         transition select(hdr.ipv4.protocol){
+            PROTO_TCP: parse_tcp;
+            PROTO_UDP: parse_udp;
             IP_PROTO: parse_count;
             default: accept;
         }
+    }
+
+    // ========== NOVOS ESTADOS DE PARSE ==========
+    state parse_tcp {
+        packet.extract(hdr.tcp);
+        transition accept;
+    }
+
+    state parse_udp {
+        packet.extract(hdr.udp);
+        transition accept;
     }
 
     state parse_count{
@@ -1033,6 +1071,7 @@ parser MyParser(packet_in packet,
         }
     }
 }
+
 /*************************************************************************
 ************   C H E C K S U M    V E R I F I C A T I O N   *************
 *************************************************************************/
@@ -1040,7 +1079,6 @@ parser MyParser(packet_in packet,
 control MyVerifyChecksum(inout headers hdr, inout metadata meta) {
     apply { }
 }
-
 
 /*************************************************************************
 **************  I N G R E S S   P R O C E S S I N G   *******************
@@ -1050,20 +1088,33 @@ control MyIngress(inout headers hdr,
                   inout metadata meta,
                   inout standard_metadata_t standard_metadata) {
 
+    // Registradores originais
+    register<bit<1>> (10) flagtoDrop_reg;
+    counter(4, CounterType.packets) forwardingPkt;
+    counter(4, CounterType.packets) dropPkt;
+    counter(4, CounterType.packets) dropRecirc;
 
+    // ========== NOVOS REGISTRADORES PARA IAT/IPI POR FLUXO ==========
+    // Identificação do fluxo
+    register<bit<32>>(256) flow_src_ip;
+    register<bit<32>>(256) flow_dst_ip;
+    register<bit<16>>(256) flow_src_port;
+    register<bit<16>>(256) flow_dst_port;
+    register<bit<8>>(256) flow_protocol;
 
-    register<bit<1>> (10) flagtoDrop_reg; // Register ON/OFF drop action
-    counter(4, CounterType.packets) forwardingPkt; // Counter forwarding packets
-    counter(4, CounterType.packets) dropPkt; // Counter packets dropped by RED
-    counter(4, CounterType.packets) dropRecirc; // Counter recirculated
+    // Métricas do fluxo
+    register<bit<48>>(256) flow_iat; // IAT em microsegundos
+    register<bit<48>>(256) flow_last_timestamp; // Timestamp do último pacote
+    register<bit<64>>(256) flow_packet_count; // Total de pacotes do fluxo
+    register<bit<1>>(256) flow_is_l4s; // 1=L4S, 0=Classic
 
     action drop_recirc() {
-        dropRecirc.count(meta.queue_metadata.output_port); //increment the counter of recirculation packets dropped
+        dropRecirc.count(meta.queue_metadata.output_port);
         mark_to_drop(standard_metadata);
     }
 
     action drop_regular() {
-        dropPkt.count((bit<32>)standard_metadata.egress_spec); //increment the counter of regular packets dropped
+        dropPkt.count((bit<32>)standard_metadata.egress_spec);
         mark_to_drop(standard_metadata);
     }
 
@@ -1072,7 +1123,7 @@ control MyIngress(inout headers hdr,
         hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
         hdr.ethernet.dstAddr = dstAddr;
         hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
-        forwardingPkt.count((bit<32>)standard_metadata.egress_spec); //increment the counter of packets fowarded
+        forwardingPkt.count((bit<32>)standard_metadata.egress_spec);
     }
 
     table ipv4_lpm {
@@ -1088,44 +1139,82 @@ control MyIngress(inout headers hdr,
         default_action = NoAction();
     }
 
-
     apply {
-
         if (standard_metadata.instance_type == BMV2_V1MODEL_INSTANCE_TYPE_RECIRC) {
-
-            //* Cloned pkts *//
-            //* Turn ON congestion flag. Write '1' in the register index port *//
-            flagtoDrop_reg.write(meta.queue_metadata.output_port,1);
-
-            //* Drop cloned pkt *//
+            flagtoDrop_reg.write(meta.queue_metadata.output_port, 1);
             drop_recirc();
-
         }
         else {
-
             ipv4_lpm.apply();
 
-            //* Read the output port state from the register*//
+            // ========== CÁLCULO DE IAT POR FLUXO ==========
+            if (hdr.ipv4.isValid()) {
+
+                // Extrair portas L4 (TCP ou UDP)
+                bit<16> src_port = 0;
+                bit<16> dst_port = 0;
+
+                if (hdr.tcp.isValid()) {
+                    src_port = hdr.tcp.srcPort;
+                    dst_port = hdr.tcp.dstPort;
+                } else if (hdr.udp.isValid()) {
+                    src_port = hdr.udp.srcPort;
+                    dst_port = hdr.udp.dstPort;
+                }
+
+                // Calcular hash da 5-tupla para identificar fluxo
+                bit<32> flow_hash;
+                hash(flow_hash,
+                     HashAlgorithm.crc32,
+                     (bit<32>)0,
+                     {hdr.ipv4.srcAddr,
+                      hdr.ipv4.dstAddr,
+                      src_port,
+                      dst_port,
+                      hdr.ipv4.protocol},
+                     (bit<32>)256);
+
+                // Obter timestamp atual (em microsegundos)
+                bit<48> current_ts = standard_metadata.ingress_global_timestamp;
+
+                // Ler timestamp do último pacote deste fluxo
+                bit<48> last_ts;
+                flow_last_timestamp.read(last_ts, flow_hash);
+
+                // Calcular IAT (Inter-Arrival Time) se não for o primeiro pacote
+                if (last_ts != 0) {
+                    bit<48> iat = current_ts - last_ts;
+                    flow_iat.write(flow_hash, iat);
+                } else {
+                    // Primeiro pacote do fluxo: armazenar informações
+                    flow_src_ip.write(flow_hash, hdr.ipv4.srcAddr);
+                    flow_dst_ip.write(flow_hash, hdr.ipv4.dstAddr);
+                    flow_src_port.write(flow_hash, src_port);
+                    flow_dst_port.write(flow_hash, dst_port);
+                    flow_protocol.write(flow_hash, hdr.ipv4.protocol);
+                    flow_is_l4s.write(flow_hash, hdr.ipv4.l4s);
+                    flow_iat.write(flow_hash, 0);
+                }
+
+                // Atualizar timestamp e contador
+                flow_last_timestamp.write(flow_hash, current_ts);
+                bit<64> pkt_count;
+                flow_packet_count.read(pkt_count, flow_hash);
+                flow_packet_count.write(flow_hash, pkt_count + 1);
+            }
+
+            // Lógica original de drop
             bit<1> flag;
-            flagtoDrop_reg.read(flag,(bit<32>)standard_metadata.egress_spec);
+            flagtoDrop_reg.read(flag, (bit<32>)standard_metadata.egress_spec);
 
-            //* Check if the congestion flag is 1 (Drop ON). *//
             if (flag == 1){
-
-                //* Not for L4S and INT! Only Classic *//
                 if ((hdr.ipv4.l4s != 1) && (hdr.nodeCount.isValid() == false)){
-
                     standard_metadata.priority = (bit<3>)7;
-
-                    //* Reset *//
-                    flagtoDrop_reg.write((bit<32>)standard_metadata.egress_spec,0);
-
-                    //* Drop future packet *//
+                    flagtoDrop_reg.write((bit<32>)standard_metadata.egress_spec, 0);
                     drop_regular();
                 }
 
                 if ((hdr.ipv4.l4s == 1) && (hdr.nodeCount.isValid() == false)){
-
                     standard_metadata.priority = (bit<3>)0;
                 }
             }
@@ -1136,41 +1225,18 @@ control MyIngress(inout headers hdr,
 /*************************************************************************
 ****************  E G R E S S   P R O C E S S I N G   *******************
 *************************************************************************/
+
 control MyEgress(inout headers hdr,
                  inout metadata meta,
                  inout standard_metadata_t standard_metadata) {
 
     register<bit<32>>(8) QueueID;
-    register<bit<16>>(10) dropProbability; // Register to save drop probability      
-    register<bit<32>>(10) QDelay_reg; //Register to save queue delay           
-    counter(4, CounterType.packets) recirc; // Counter recirculate pkts
-    counter(4, CounterType.packets) cloneCount; // Counter clone pkts
+    register<bit<16>>(10) dropProbability;
+    register<bit<32>> (1) targetDelay_reg;
+    register<bit<32>>(10) QDelay_reg;
+    counter(4, CounterType.packets) recirc;
+    counter(4, CounterType.packets) cloneCount;
 
-    // ========== NOVOS REGISTRADORES PARA MÉTRICAS ==========
-
-    // Registradores para Delay da Fila separados por tipo de tráfego (em microsegundos)
-    register<bit<32>>(10) queue_delay_l4s; // EWMA do delay para tráfego L4S
-    register<bit<32>>(10) queue_delay_classic; // EWMA do delay para tráfego Classic
-
-    // Registradores para IPI/IAT (Inter-Packet Interval / Inter-Arrival Time)
-    register<bit<48>>(10) last_packet_timestamp_l4s; // Timestamp do último pacote L4S
-    register<bit<48>>(10) last_packet_timestamp_classic; // Timestamp do último pacote Classic
-    register<bit<48>>(10) ipi_l4s; // IPI bruto (raw) para L4S (em microsegundos)
-    register<bit<48>>(10) ipi_classic; // IPI bruto (raw) para Classic (em microsegundos)
-
-    // Registradores para Contagem de Pacotes Dropados por porta
-
-    register<bit<64>>(10) dropped_packets_classic; // Total de pacotes Classic dropados
-
-    // Registradores para Contagem de Pacotes Marcados (CE - Congestion Experienced)
-    register<bit<64>>(10) ce_marked_packets_l4s; // Total de pacotes L4S marcados com ECN=11
-
-    // Registradores para Contagem Total de Pacotes processados
-    register<bit<64>>(10) total_packets_l4s; // Total de pacotes L4S processados
-    register<bit<64>>(10) total_packets_classic; // Total de pacotes Classic processados
-
-
-    // Send again the packet through both pipelines
     action recirculate_packet(){
         recirculate_preserving_field_list(0);
         recirc.count(meta.queue_metadata.output_port);
@@ -1211,127 +1277,37 @@ control MyEgress(inout headers hdr,
 
  QueueID.write((bit<32>)standard_metadata.qid, 1);
 
-        //* Only INT packets *//    
         if (hdr.nodeCount.isValid()) {
-
             swtrace.apply();
-
         }
 
-        //* Check IF is a clone pkt generated in the egress *//
         if (standard_metadata.instance_type == BMV2_V1MODEL_INSTANCE_TYPE_EGRESS_CLONE) {
-
             meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port;
             recirculate_packet();
         }
         else {
-
-            //* Only regular (not cloned) packets enter here *//
-
-            bit<32> port_idx = (bit<32>)standard_metadata.egress_port;
-            bool is_l4s = (hdr.ipv4.l4s == 1);
-
-            // ========== COLETAR MÉTRICAS: IPI/IAT ==========
-            bit<48> current_timestamp = standard_metadata.egress_global_timestamp;
-
-            if (is_l4s) {
-                // Processar IPI/IAT para tráfego L4S
-                bit<48> last_ts;
-                last_packet_timestamp_l4s.read(last_ts, port_idx);
-
-                if (last_ts != 0) {
-                    // Calcular intervalo bruto entre pacotes (raw IPI)
-                    bit<48> interval = current_timestamp - last_ts;
-
-                    // Armazenar o valor bruto diretamente
-                    ipi_l4s.write(port_idx, interval);
-                }
-
-                // Atualizar timestamp do último pacote
-                last_packet_timestamp_l4s.write(port_idx, current_timestamp);
-
-                // Incrementar contador total de pacotes L4S
-                bit<64> total_l4s;
-                total_packets_l4s.read(total_l4s, port_idx);
-                total_packets_l4s.write(port_idx, total_l4s + 1);
-
-            } else {
-                // Processar IPI/IAT para tráfego Classic
-                bit<48> last_ts;
-                last_packet_timestamp_classic.read(last_ts, port_idx);
-
-                if (last_ts != 0) {
-                    // Calcular intervalo bruto entre pacotes (raw IPI)
-                    bit<48> interval = current_timestamp - last_ts;
-
-                    // Armazenar o valor bruto diretamente
-                    ipi_classic.write(port_idx, interval);
-                }
-
-                last_packet_timestamp_classic.write(port_idx, current_timestamp);
-
-                // Incrementar contador total de pacotes Classic
-                bit<64> total_classic;
-                total_packets_classic.read(total_classic, port_idx);
-                total_packets_classic.write(port_idx, total_classic + 1);
-            }
-
-            //* Read TARGET_DELAY from register updated by Control Plane *//
             bit<32> TARGET_DELAY = 20000;
-
-
-            //* Get queue delay per packet after TM *//
             bit<32> qdelay = (bit<32>)standard_metadata.deq_timedelta;
-
-            //* Previous Queue Delay by port used to compute moving average *//
             bit<32> previousQDelay;
             QDelay_reg.read(previousQDelay, (bit<32>)standard_metadata.egress_port);
-
-            //* Compute Exponentially-Weighted Mean Average (EWMA) of queue delay *//
-            // EWMA = alpha*qdelay + (1 - alpha)*previousEWMA
-            // We use alpha = 0.5 such that multiplications can be replaced by bit shifts
-
             bit<32> EWMA = (qdelay>>1) + (previousQDelay>>1);
-
-            //* Update register *//
             QDelay_reg.write((bit<32>)standard_metadata.egress_port, EWMA);
 
-            // ========== COLETAR MÉTRICAS: DELAY DA FILA POR TIPO ==========
-            if (is_l4s) {
-                queue_delay_l4s.write(port_idx, EWMA);
-            } else {
-                queue_delay_classic.write(port_idx, EWMA);
-            }
+            bit<8> target_violation;
 
-            //* Check if the queue delay reach the target limit *//
-            //* 0 = no drop    *//
-            //* 1 = Maybe drop *//
-            //* 2 = drop       *//
-
-            bit<8> target_violation = 0; // Inicializar com valor padrão
-
-            //* No drop *//
             if (EWMA <= TARGET_DELAY){
-
                 target_violation = 0;
-
             }
-            //* Maybe drop *//
-            else if ((EWMA > TARGET_DELAY) && (EWMA < (TARGET_DELAY<<1))){
 
+            if ((EWMA > TARGET_DELAY) && (EWMA < (TARGET_DELAY<<1))){
                 target_violation = 1;
-
             }
-            //* Drop *//
-            else if (EWMA >= (TARGET_DELAY<<1)){
 
+            if (EWMA > (TARGET_DELAY<<1)){
                 target_violation = 2;
-
             }
-
 
             if (target_violation == 1) {
-
                 bit<16> rand_classic;
                 random(rand_classic, 0, 65535);
                 bit<16> rand_l4s = rand_classic >> 1;
@@ -1339,102 +1315,47 @@ control MyEgress(inout headers hdr,
                 bit<16> dropProb_temp;
 
                 if (hdr.ipv4.l4s == 1){
-
                     bool mark_decision_l4s;
                     dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port);
 
-
-                    //* Compute L4S mark probability *//
                     if (rand_l4s < dropProb){
-
                         dropProb_temp = dropProb - 1;
-
                         dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp);
-
                         mark_decision_l4s = true;
-
                     }else{
-
                         dropProb_temp = dropProb + 1;
-
                         dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp);
-
                         mark_decision_l4s = false;
-
                     }
 
-                    //* Mark ECN bit to L4S traffic *//
                     if (mark_decision_l4s == true){
-
                         hdr.ipv4.ecn = 3;
-
-                        // ========== COLETAR MÉTRICAS: PACOTES MARCADOS CE ==========
-                        bit<64> ce_count;
-                        ce_marked_packets_l4s.read(ce_count, port_idx);
-                        ce_marked_packets_l4s.write(port_idx, ce_count + 1);
-
                     }
-
                 }else{
-
                     bool drop_decision_classic;
                     dropProbability.read(dropProb, (bit<32>)standard_metadata.egress_port);
 
-                    //* Compute Classic drop probability *//
                     if (rand_classic < dropProb){
-
                         dropProb_temp = dropProb - 1;
-
                         dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp);
-
                         drop_decision_classic = true;
-
                     }else{
-
                         dropProb_temp = dropProb + 1;
-
                         dropProbability.write((bit<32>)standard_metadata.egress_port,dropProb_temp);
-
                         drop_decision_classic = false;
-
                     }
-
 
                     if (drop_decision_classic == true){
-
                         meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port;
                         clonePacket();
-
-                        // ========== COLETAR MÉTRICAS: PACOTES DROPADOS ==========
-                        bit<64> drop_count;
-                        dropped_packets_classic.read(drop_count, port_idx);
-                        dropped_packets_classic.write(port_idx, drop_count + 1);
-
                     }
                 }
-
             }else if (target_violation == 2){
-
-                //* Mark ECN bit to L4S traffic *//
                 if (hdr.ipv4.l4s == 1){
-
                     hdr.ipv4.ecn = 3;
-
-                    // ========== COLETAR MÉTRICAS: PACOTES MARCADOS CE ==========
-                    bit<64> ce_count;
-                    ce_marked_packets_l4s.read(ce_count, port_idx);
-                    ce_marked_packets_l4s.write(port_idx, ce_count + 1);
-
                 }else{
-
                     meta.queue_metadata.output_port = (bit<32>)standard_metadata.egress_port;
                     clonePacket();
-
-                    // ========== COLETAR MÉTRICAS: PACOTES DROPADOS ==========
-                    bit<64> drop_count;
-                    dropped_packets_classic.read(drop_count, port_idx);
-                    dropped_packets_classic.write(port_idx, drop_count + 1);
-
                 }
             }
         }
@@ -1475,6 +1396,8 @@ control MyDeparser(packet_out packet, in headers hdr) {
     apply {
         packet.emit(hdr.ethernet);
         packet.emit(hdr.ipv4);
+        packet.emit(hdr.tcp);
+        packet.emit(hdr.udp);
         packet.emit(hdr.nodeCount);
         packet.emit(hdr.INT);
     }
