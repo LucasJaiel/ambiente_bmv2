@@ -18,11 +18,11 @@
       command: ifconfig enp0s17 up
 
     - name: Compile p4 code
-      command: p4c -b bmv2 /vagrant/2code/iat_l4s.p4 -o /vagrant/2code/iat_l4s.bmv2
+      command: p4c -b bmv2 /vagrant/3code/l4s.p4 -o /vagrant/3code/l4s.bmv2
     
   
     - name: Start Bmv2 Switch
-      shell: simple_switch --device-id 1 --thrift-port 9090 --interface 0@enp0s9 --interface 1@enp0s10 --interface 2@enp0s16 --interface 3@enp0s17 /vagrant/2code/iat_l4s.bmv2/iat_l4s.json -- --priority-queues 8 &
+      shell: simple_switch --device-id 1 --thrift-port 9090 --interface 0@enp0s9 --interface 1@enp0s10 --interface 2@enp0s16 --interface 3@enp0s17 /vagrant/3code/l4s.bmv2/l4s.json -- --priority-queues 8 &
       async: 1000
       poll: 5
     
@@ -37,6 +37,12 @@
     - name: Disable offloading features on enp0s9
       command: ethtool --offload enp0s9 gso off tso off gro off
     
+
+    - name: Disable offloading features on enp0s10
+      command: ethtool --offload enp0s10 gso off tso off gro off
+
+    - name: Disable offloading features on enp0s16
+      command: ethtool --offload enp0s16 gso off tso off gro off
 
     - name: Disable offloading features on enp0s17
       command: ethtool --offload enp0s17 gso off tso off gro off
