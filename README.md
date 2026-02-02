@@ -11,7 +11,7 @@ A novel data-plane-based detection and mitigation mechanism implemented in P4. <
 P4-Based Defense Mechanism: Line-rate detection and mitigation without requiring end-host modifications.
 <p align="center">
   <img src="img/L4Sec-1.png" alt="Overview Packet Processing" width="400"/>
-  <img src="img/L4Sec2-1.png" alt="" width="150"/>
+  <img src="img/L4Sec2-1.png" alt="" width="190"/>
 </p>
 
 Used Tools:
