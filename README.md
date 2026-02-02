@@ -11,6 +11,5 @@ Used Tools:
 - VirtualBox >= 6.1
 - Vagrant >= 2.2.0
 - ansible [core 2.15.13]
-- python 3.9.2 for some dependencies.
-OBS: The P4 Compiler and BMV2 (Behavioral Model 2) are integrated into the box with the VM defined as "router_bmv2" in the Vagrantfile.
+- python 3.9.2 for some dependencies.  OBS: The P4 Compiler and BMV2 (Behavioral Model 2) are integrated into the box with the VM defined as "router_bmv2" in the Vagrantfile.
 
