@@ -5,6 +5,10 @@ This repository contains the artifacts used in the paper: **When ECN Lies: Unfai
 Low Latency, Low Loss and Scalable Throughput (L4S) is a recent IETF architecture that enables Internet applications to achieve ultra-low queuing latency and scalable throughput. However, the architecture faces critical security challenges, particularly the non-responsive ECN attack, where malicious flows exploit the low-latency queue by manipulating ECN headers.
   <p align="center">
     <img src="img/ataque-wide.svg" alt="Enviroment" width="300"/>
+    <br>
+    <sub><b>Figure 1:</b>TESTEBED.<sub>
+</p>
+    Overview of packet processing and L4S attack detection environment.
   </p>
 This work presents:
 A novel data-plane-based detection and mitigation mechanism implemented in P4. <br>
@@ -13,7 +17,7 @@ P4-Based Defense Mechanism: Line-rate detection and mitigation without requiring
   <img src="img/L4Sec-1.png" alt="Overview Packet Processing" width="400"/>
   <img src="img/L4Sec2-1.png" alt="" width="190"/>
   <br>
-  <sub><b>Figure 1:</b>Overview of packet processing and L4S attack detection environment.<sub>
+  <sub><b>Figure 2:</b>Overview of packet processing and L4S attack mitigation.<sub>
 </p>
 
 Used Tools:
