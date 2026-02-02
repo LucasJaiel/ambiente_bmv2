@@ -7,7 +7,7 @@ Low Latency, Low Loss and Scalable Throughput (L4S) is a recent IETF architectur
     <img src="img/ataque-wide.svg" alt="Enviroment" width="300"/>
   </p>
 This work presents:
-A novel data-plane-based detection and mitigation mechanism implemented in P4.
+A novel data-plane-based detection and mitigation mechanism implemented in P4. <br>
 P4-Based Defense Mechanism: Line-rate detection and mitigation without requiring end-host modifications.
 <p align="center">
   <img src="img/L4Sec-1.png" alt="Overview Packet Processing" width="400"/>
