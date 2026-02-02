@@ -18,20 +18,20 @@
       command: ifconfig enp0s17 up
 
     - name: Compile p4 code
-      command: p4c -b bmv2 /vagrant/3code/l4s.p4 -o /vagrant/3code/l4s.bmv2
+      command: p4c -b bmv2 /vagrant/code/l4s_ace_detec.p4 -o /vagrant/code/l4s_ace_detec.bmv2
     
   
     - name: Start Bmv2 Switch
-      shell: simple_switch --device-id 1 --thrift-port 9090 --interface 0@enp0s9 --interface 1@enp0s10 --interface 2@enp0s16 --interface 3@enp0s17 /vagrant/3code/l4s.bmv2/l4s.json -- --priority-queues 8 &
+      shell: simple_switch --device-id 1 --thrift-port 9090 --interface 0@enp0s9 --interface 1@enp0s10 --interface 2@enp0s16 --interface 3@enp0s17 /vagrant/code/l4s_ace_detec.bmv2/l4s_ace_detec.json -- --priority-queues 8 &
       async: 1000
       poll: 5
     
   
     - name: Insert entries in switch table by control plane
-      shell: cat /vagrant/3code/table1.txt | simple_switch_CLI
+      shell: cat /vagrant/code/table1.txt | simple_switch_CLI
     
     - name: Insert general configs, mirroring and queues
-      shell: cat /vagrant/3code/general_config.txt | simple_switch_CLI
+      shell: cat /vagrant/code/general_config.txt | simple_switch_CLI
     
     - name: Disable offloading features on enp0s9
       command: ethtool --offload enp0s9 gso off tso off gro off
