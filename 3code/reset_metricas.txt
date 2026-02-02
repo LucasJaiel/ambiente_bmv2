@@ -1,4 +1,0 @@
-register_reset MyEgress.queue_ewma_l4s
-register_reset MyEgress.queue_ewma_classic
-counter_reset MyIngress.dropPkt
-counter_reset MyEgress.ecnMarkedPkt
