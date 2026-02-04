@@ -180,9 +180,10 @@ control MyIngress(inout headers hdr,
                     // Salva o timestamp de quando a janela foi ativada
                     reg_verification_window_start.write(0, standard_metadata.ingress_global_timestamp);
                     // ==================================================
+                    mark_to_drop(standard_metadata); 
+                    return;
                 }
-                mark_to_drop(standard_metadata); 
-                return;
+
             }
 
             // ========== VERIFICAÇÃO DE ACKs APENAS DENTRO DA JANELA ==========
